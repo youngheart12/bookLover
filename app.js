@@ -5,7 +5,6 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import config from './config';
 
-// routes
 import authRoutes from './API/Auth/auth';
 import collectionRoutes from './API/Collection/collectionapi';
 

@@ -1,14 +1,99 @@
-.title-bar h5{
-  color: #c4bbf0;
-  padding-left: 10px;
+
+
+/* extra */
+.featuredExtra{
+  margin:2em; 
 }
 
-#download:hover{
-color: mediumseagreen;
-cursor: pointer;
+
+.featuredExtra h2{
+  color:#ffaf5a;
+  font-family:  'Titillium Web', sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+  opacity: 87%;
+  margin:0px
+  
 }
-#heart:hover{
-  color: red;
+.featuredExtraInside{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+
+}
+.featuredExtraInside>div{
+margin: 15px;
+  
+}
+.parentF{
+  display: flex;
+  flex-direction: row;
+  background-color: slateblue;
+  border-radius: 25px;
+  box-shadow: 0px 10px 5px 0 rgba(0,0,0,0.5);
+  box-sizing: border-box;
+}
+
+.childF3{
+  background-color:rgba(0,0,0,0.5);
+  color: white;
+  opacity: 0.7;
+  font-size: 1.2em;
+  border-top-right-radius: 25px;;
+  border-bottom-right-radius:25px ;
+}
+.parentF>div{
+  padding: 10px;
+}
+.childF2{
+  font-family:  'Titillium Web', sans-serif;
+  font-weight: 800;
+  color: white;
+  opacity: 87%;
+ 
+  margin-top: 10px;
+}
+.smallClass{
+  font-family: 'Roboto', sans-serif;
+  color:black;
+  font-weight: 600;;
+}
+.childF3:hover{
+  opacity: 1;
+}
+#downloadIcon:hover{
+  color: mediumseagreen;
+  opacity: 1;
+  transition: ease-in-out color 0.2s;
+  
+  cursor: pointer;
+}
+#heartIcon:hover{
+  color: #EC5757;
+  transition: ease-out color 0.5s;
   cursor: pointer;
 }
 
+@media only screen and (max-width: 800px)
+{
+  .featuredExtra{
+    width: 100%;
+  }
+  .featuredExtra h2{
+    font-size: 1em;
+  }
+  .featuredExtraInside>div{
+    margin:10px 0px;
+    
+  }
+  .parentF>div{
+    padding: 0px;
+  }
+  #iconparent{
+    font-size: 1.5em;
+  }
+  .childF2 h5{
+    font-size: 0.8em;
+  }
+}

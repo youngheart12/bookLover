@@ -28,11 +28,11 @@ export class authentication extends Component {
             <div>
                 {this.state.isAuthenticated?
                 <nav>
-                <a href="#"><h5>#StarterPack</h5></a>
+                {/* <a href="#"><h5>#StarterPack</h5></a> */}
                 <a href="/" className="active">Home</a>
                 <a href="#">Contact</a>
                 <a href="/dashboard">Dashboard</a>
-                <a onClick={this.logOutHandler}>Logout</a>
+                <a onClick={this.logOutHandler} style={{color:"red"}}>Logout</a>
                 <a href="#">{this.state.user.user.name}</a>
                 </nav>
                 :

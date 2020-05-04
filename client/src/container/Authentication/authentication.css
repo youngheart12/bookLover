@@ -1,11 +1,14 @@
 
 nav {
-    background-color: #352f44;
+    background-color: #262833;
     padding: 15px;
+    font-family: 'Titillium Web', sans-serif;
+    opacity: 90%;
+    box-sizing: border-box;
 }
 nav a{
     padding: 15px;
-    color: #c4bbf0;
+    color: #FFAF5F;
     text-decoration: none;
     
 }
@@ -14,7 +17,7 @@ nav a h5{
     float: left;
 }
 nav h4{
-    color:white;
+   
     float: left;
     padding: 0px;
     margin:0px;
@@ -23,9 +26,13 @@ nav{
     text-align: right;
 }
 nav a:hover{
-    text-decoration: underline;
-    color: white;
-   
+    color: #262833;
+    background-color: #FFAF5F;
+    border-radius: 5%;
+    text-decoration: none;
+   padding: 0px;
+   padding: 10px 20px;
+   opacity: 87%;
 }
 
 nav a:active{
