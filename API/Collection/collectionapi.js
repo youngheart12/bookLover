@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import User from '../../Model/USER_PROFILE/userProfile';
 import IndCollection from '../../Model/Collection/collection';
+import AllCollection from '../../Model/UserCollection/userCollection';
 import { Collection } from 'mongoose';
 const router = Router();
 router.post('/owner/:userId',async(req,res)=>{
@@ -40,9 +41,24 @@ router.delete('/owner/update/:collectionId',async(req,res)=>{
     res.status(200).send(deletedCollection);
 })
 
+
+//@update colletion 
 router.patch('/owner/update/:collectionId',async(req,res)=>{
     const {collectionId}=req.params;
-    const updatedCollection= await IndCollection.findByIdAndUpdate(req.params.id,req.body,{new:true,runValidators:true});
+    const updatedCollection= await IndCollection.findByIdAndUpdate(collectionId,req.body,{new:true,runValidators:true});
     res.status(200).send(updatedCollection);
+})
+
+//@update profile 
+
+router.patch('/owner/updateuser/:userId',async(req,res)=>{
+    const {userId}=req.params;
+    const updatedUserProfile =await User.findByIdAndUpdate(userId,req.body,{new:true,runValidators:true})
+    res.status(200).send(updatedUserProfile);
+})
+
+router.get('/showCollection',async(req,res)=>{
+    const allCollection=await AllCollection.find();
+    res.status(200).send(allCollection);
 })
 export default router;
