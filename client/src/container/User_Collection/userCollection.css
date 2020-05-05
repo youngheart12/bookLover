@@ -1,4 +1,58 @@
-.title-bar h5{
-    color: #c4bbf0;
-    padding-left: 10px;
+.title-bar {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
 }
+.title-bar h2{
+color:#ffaf5a;
+  font-family:  'Titillium Web', sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+  opacity: 87%;
+  margin:0px
+}
+
+.userCollectionWrapper
+{
+    /* background-color:#333138; */
+  
+    border-radius: 25px;
+    margin: 15px;
+    padding: 25px;
+    min-height: 4em;
+}
+.spinnerWrap{
+    display: flex;
+    margin: 0px auto;
+}
+
+.userCollectionWrapperMob {
+    display: flex;
+    flex-wrap: nowrap; 
+    
+    overflow: auto;
+    
+  }
+  .flex-item {
+    flex: 0 0 auto;
+    margin: 1em;
+    max-height: 250px;
+    max-width: 250px;
+  }
+  @media only screen and (max-width:800px)
+  {
+      div.col-md-3{
+       margin-bottom: 15px;
+      }
+      .userCollectionWrapper{
+          margin: 0px;
+          background-color: inherit;
+      }
+      .title-bar
+      {
+          margin: 0.5em 2em;
+      }
+      .title-bar h2{
+          font-size: 1.3em;
+      }
+  }

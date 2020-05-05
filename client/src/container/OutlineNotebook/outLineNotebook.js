@@ -67,7 +67,7 @@ function BookListContainerComponent(props){
                     <h2 ><OutlineEditing 
                     text={storeBookName} onSetText={text=>setBookName(text)}
                     editMode={storeDisplayButton}
-                    ></OutlineEditing> <span role="img">&#128519h;</span></h2> 
+                    ></OutlineEditing> <span role="img"></span></h2> 
                      <p id="createCollection"><OutlineEditing   text={storeAuthorName} onSetText={text=>setAuthorName(text)}  editMode={storeDisplayButton}></OutlineEditing> </p> 
                      <p className="review">
                         <OutlineEditing  textAreaNeeded="true" text={storeBookReview} onSetText={text=>setBookReview(text)}  editMode={storeDisplayButton}></OutlineEditing>

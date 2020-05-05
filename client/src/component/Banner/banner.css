@@ -1,0 +1,41 @@
+.parentWrapperBanner{
+    display: flex;
+    margin: 5em;
+    flex-direction: column;
+    background-color: #8C889C;
+    
+}
+.parentWrapperBanner h1{
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 800;
+    opacity: 87%;
+    text-align: center;
+    color: white;
+}
+.childWrapperBanner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.childWrapperBanner>div{
+    color: white;
+    padding: 10px 0px;
+    border-radius: 5px;
+    flex-grow:1;
+    margin: 1em;
+    text-align: center;
+    height: 150px;
+   
+}
+.childD1{
+border: 1px solid red;
+background-color: #8C889C;
+box-shadow: 5px 15px 20px 0px rgba(0,0,0,0.5);
+
+}
+.childD2{
+
+}
+.childD3{
+
+}

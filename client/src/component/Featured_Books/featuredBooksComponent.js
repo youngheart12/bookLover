@@ -18,9 +18,11 @@ const featuredBooksComponent=(props)=>{
         </div>
         
         <div className="childF3">
+            <span>
            <i class="fas fa-download" id="downloadIcon"></i>
            <br></br>
            <i class="fas fa-heart" id="heartIcon"></i>
+           </span>
         </div>
         
         </div>

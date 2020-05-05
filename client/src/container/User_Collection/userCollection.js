@@ -3,7 +3,7 @@ import UserCollectionOutline from './userCollectionOutline/userCollectionOutline
 import './userCollection.css';
 import {connect} from 'react-redux';
 import * as actionCreator from '../../action/Collection/collectionAction';
-import { Row,Col,Spinner, Button } from 'reactstrap';
+import { Row,Col,Spinner} from 'reactstrap';
 
 
  class userCollection extends Component {
@@ -11,7 +11,7 @@ import { Row,Col,Spinner, Button } from 'reactstrap';
        
     componentDidMount()
     {
-        this.props.ongetAllUserFunction();
+       this.props.ongetAllUserFunction();
        
     }
   
@@ -30,19 +30,52 @@ import { Row,Col,Spinner, Button } from 'reactstrap';
         return (
             <div>
             <div className="title-bar">
+
                 <br></br>
-                <h5><u>#User Collection</u></h5>
-                </div>
-                <div style={{margin:"15px"}}>
-                    <Row>
-                    {(isLoading)?<Spinner color="primary" type="grow"></Spinner>:showCollection.map((user,id)=>{
-                        return <Col md="3"><UserCollectionOutline  key={id}isImg={user.isImg} aboutUser={user.about} firstLetter={user.name.slice(0,1)} id={user.id} launchHandler={()=>this.launchHandler(user.id)}></UserCollectionOutline></Col>
-                    })}
-                    </Row>
+                <h2>User Collection</h2>
+                <br></br>
+
+            </div>
+
+            <div  className="userCollectionWrapper">
+               
+                <Row>
+                {(isLoading)?<div className="spinnerWrap">
+                   
+                <Spinner color="primary" type="grow"></Spinner>
+                <Spinner color="primary" type="grow"></Spinner>
+                <Spinner color="primary" type="grow"></Spinner>
+                <Spinner color="primary" type="grow"></Spinner>
+                <Spinner color="primary" type="grow"></Spinner>
                 
-                </div>
+                </div>:showCollection.map((user,id)=>{
+                return <Col md="3"><UserCollectionOutline  key={id}isImg={user.isImg} aboutUser={user.about} firstLetter={user.name} id={user.id} launchHandler={()=>this.launchHandler(user.id)}></UserCollectionOutline></Col>
+                })}
+                </Row>
                 
-              </div>
+            </div>
+
+            {/* <div  className="userCollectionWrapperMob">
+               
+                
+                {(isLoading)?<div className="spinnerWrap">
+                   
+                <Spinner color="primary" type="grow"></Spinner>
+                <Spinner color="primary" type="grow"></Spinner>
+                <Spinner color="primary" type="grow"></Spinner>
+                <Spinner color="primary" type="grow"></Spinner>
+                <Spinner color="primary" type="grow"></Spinner>
+                
+                </div>:showCollection.map((user,id)=>{
+                return <div className="flex-item"><UserCollectionOutline  key={id}isImg={user.isImg} aboutUser={user.about} firstLetter={user.name} id={user.id} launchHandler={()=>this.launchHandler(user.id)}></UserCollectionOutline></div>
+                })}
+               
+                
+            </div> */}
+
+     
+                
+            </div>
         )
     }
 }

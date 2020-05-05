@@ -16,3 +16,23 @@
    color:yellow;
    cursor: pointer;
 }
+.nameStyle{
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    text-align: center;
+    opacity: 87%;
+    font-size: 1.2em;
+}
+.usercollectionwrap{
+    border-color: mediumaquamarine;
+  border-bottom: 2px solid #FFAE5A;
+    border-radius: 15px;
+   
+}
+/* .usercollectionwrap:hover{
+    background-color: mediumpurple;
+    opacity: 0.8;
+    transition: ease-out background-color,0.2s;
+} */

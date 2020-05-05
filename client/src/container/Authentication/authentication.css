@@ -12,18 +12,18 @@ nav a{
     text-decoration: none;
     
 }
-nav a h5{
-    display: inline;
-    float: left;
+
+.nav-header{
+    font-family:'Titillium Web', sans-serif;
+    box-sizing: border-box;
+    color:#FFAF5F ;
 }
-nav h4{
-   
-    float: left;
-    padding: 0px;
-    margin:0px;
+.nav-header h2{
+    padding: 10px;
 }
 nav{
     text-align: right;
+    background-color: #3C242E;
 }
 nav a:hover{
     color: #262833;
@@ -37,4 +37,45 @@ nav a:hover{
 
 nav a:active{
     color: white;
+}
+
+
+.authentication-flex{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    top: 0;
+    left: 0;
+    color: white;
+   
+}
+.authenticate-flex-mob{
+    display: none;
+}
+
+@media only screen  and (max-width:800px)
+{
+    .authentication-flex{
+        display: none;
+    }
+    .authenticate-flex-mob{
+        display: flex;
+        color: white;
+    }
+    nav{
+        padding:0px;
+    }
+    .authenticate-mob-open{
+        display: flex;
+        flex-direction: column;
+        color: white;
+       
+       height: 100%;
+       
+    }
+    nav{
+        text-align: left;
+        padding: 15px;
+    }
+    
 }

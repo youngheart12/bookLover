@@ -1,14 +1,36 @@
 import React, { Component } from 'react'
 import {Jumbotron} from 'reactstrap';
 import '../dashboard.css';
+import {connect} from 'react-redux';
 export class displayInfo extends Component {
     state={
         shownavbar:true,
         createNewList:false,
-        countIncrease:1,
-        profile:false
+        countIncrease:0,
+        userc:null,
+        profile:false,
+        
     }
+    componentDidUpdate(prevProps,nextState)
+    {
+        if(this.props.collection.userCollection!==nextState.userc)
+        {
+            this.setState({
+                userc:this.props.collection.userCollection
+            })
+            const{userc}=this.state;
+            if(userc)
+            {
+                this.setState({
+                    countIncrease:userc.length
+                })
+            }
+        }
+    }
+    
+
     render() {
+       
         return (
             <Jumbotron className="dashboardChildWrapper">
             {this.state.countIncrease>0?
@@ -55,4 +77,9 @@ export class displayInfo extends Component {
     }
 }
 
-export default displayInfo
+ const mapStateToProps=state=>(
+     {
+         collection:state.collection
+     }
+ )
+export default connect(mapStateToProps,null)(displayInfo)

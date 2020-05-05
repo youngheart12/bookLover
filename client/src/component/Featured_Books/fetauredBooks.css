@@ -74,18 +74,21 @@ margin: 15px;
   transition: ease-out color 0.5s;
   cursor: pointer;
 }
-
+.infoBoxFeatured{
+  display: none;
+}
 @media only screen and (max-width: 800px)
 {
-  .featuredExtra{
-    width: 100%;
-  }
+ 
   .featuredExtra h2{
-    font-size: 1em;
+    font-size: 1.2em;
   }
+ 
   .featuredExtraInside>div{
-    margin:10px 0px;
-    
+    margin: 10px;
+  }
+  .parentF{
+    width: 100%;
   }
   .parentF>div{
     padding: 0px;
@@ -93,7 +96,28 @@ margin: 15px;
   #iconparent{
     font-size: 1.5em;
   }
+  .childF1{
+    margin-top: 5px;
+  }
+  .childF2{
+    flex-grow: 1;
+  }
   .childF2 h5{
     font-size: 0.8em;
   }
+  .childF3{
+ 
+    flex-grow: 0.5;
+    justify-content: center;
+    text-align: center
+    
+  }
+  .infoBoxFeatured{
+    padding: 32px 16px;
+    margin: 0px 0px 32px;
+    background-color: seashell;
+  font-family:  'Titillium Web', sans-serif;
+  
+  }
+ 
 }
