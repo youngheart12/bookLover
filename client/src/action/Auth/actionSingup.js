@@ -30,7 +30,7 @@ return function(dispatch){
 //@@login
 
 export const loginUserFunction=(user)=>{
-    console.log("reached here");
+   
     return function(dispatch){
         dispatch(setLoading);
         const config={

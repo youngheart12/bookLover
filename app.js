@@ -20,8 +20,8 @@ app.use(cors());
 app.use(bodyParser.json());
 // DB Config
 
-const db = `${MONGO_URI}/${MONGO_DB_NAME}`;
-console.log(db);
+const db = `${MONGO_URI}`;
+
 // Connect to Mongo
 mongoose
   .connect(db, {

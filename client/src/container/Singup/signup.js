@@ -23,7 +23,7 @@ export class signup extends Component {
            email:this.state.email,
            about:this.state.about
        }
-       console.log("submiited");
+      
        this.props.onSignup(userData);
    }
   

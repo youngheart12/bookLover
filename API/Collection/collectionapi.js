@@ -2,7 +2,7 @@ import { Router } from 'express';
 import User from '../../Model/USER_PROFILE/userProfile';
 import IndCollection from '../../Model/Collection/collection';
 import AllCollection from '../../Model/UserCollection/userCollection';
-import { Collection } from 'mongoose';
+
 const router = Router();
 router.post('/owner/:userId',async(req,res)=>{
     const {userId}=req.params;

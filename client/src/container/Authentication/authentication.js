@@ -36,7 +36,7 @@ export class authentication extends Component {
     this.setState({ isAuthenticated: false })
   }
   render() {
-    console.log(this.state)
+   
     return (
       <div className="pp">
         {/* desktop authenticate */}

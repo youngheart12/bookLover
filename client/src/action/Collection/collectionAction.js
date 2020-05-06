@@ -24,7 +24,7 @@ export const getAllUserFunction=()=>{
                 payload:false
             })
         }).catch((err)=>{
-            console.log(err)
+            
             dispatch({
                 type:actionType.GET_ALL_COLLECTION_FAIL,
                 payload:err
@@ -72,7 +72,7 @@ export const putUserCollectionFunction=(postData)=>{
     return function(dispatch)
     {
         
-    console.log("Reached here with data of ",postData,getUserId());
+  
     const config={
         headers:{
             'Content-Type':'application/json'
