@@ -28,28 +28,7 @@ export class outLineCollection extends Component {
                 })
             }
     }
-    // static getDerivedStateFromProps(props,state)
-    // {
-    //     if(props.collection.isLoading!==state.isLoadingg)
-    //     {
-           
-    //         return {
-    //            datalist:props.collection.userCollection,
-    //            isLoadingg:false
-    //         }
-    //     }else{
-    //         return null;
-    //     }
-    // }
-    // componentDidUpdate(prevProps,nextState)
-    // {
-    //     if(this.props.collection.isLoading!==nextState.isLoadingg)
-    //     this.setState({
-    //         datalist:this.props.collection.userCollection
-    //     })
-      
-        
-    // }
+   
    
    
     showHideHandler=()=>{
@@ -67,7 +46,7 @@ export class outLineCollection extends Component {
     }
     
     deleteButtonHandler=(id)=>{
-        console.log(id);
+       
         this.props.ondeleteOneCollectionFunction(id);
     //   let data1=this.state.datalist;
     //   data1.splice(id,1);
@@ -75,12 +54,12 @@ export class outLineCollection extends Component {
     }
     updatecollectionHandler=()=>{
         const updateData=JSON.parse(localStorage.getItem("datatoupdated"));
-        console.log(updateData);
+     
         this.props.onupdateUserCollection(updateData);
     }
     render() {
         const {isLoading}=this.props.collection;
-        console.log(this.state.datalist,"render")
+       
         if(this.state.datalist===null)
         {
                     return <Spinner color="success" type="grow"></Spinner>

@@ -9,7 +9,7 @@ import authRoutes from './API/Auth/auth';
 import collectionRoutes from './API/Collection/collectionapi';
 
 
-const { MONGO_URI, MONGO_DB_NAME } = config;
+const { MONGO_URI } = config;
 
 const app = express();
 

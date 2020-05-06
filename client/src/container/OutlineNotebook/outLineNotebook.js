@@ -41,7 +41,7 @@ function BookListContainerComponent(props){
         
     }, [storeMultiple])
       useEffect(() => {
-          console.log(storeDisplayButton,"button")
+        
           if(storeSomeEdit===true)
           {
               const dataToUpdate={
