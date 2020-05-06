@@ -43,3 +43,26 @@ margin-top: 5px;
 }
 #share-buttons img 
 { width: 35px; padding: 5px; border: 0; box-shadow: 0; display: inline; }
+
+@media only screen and (max-width:800px)
+{
+    .dashboardParentWrapper{
+        margin: 1em;
+    }
+    .dashboardChildInsideWrapper{
+        margin: 0px 0px 16px;
+        padding: 32px 16px;
+    }
+    .dashboardChildInsideWrapper h2{
+        font-size: 1.2em;
+    }
+    .dashboardChildInsideWrapper small{
+        font-size: 0.7em;
+    }
+    #openCreatorContent{
+        font-size: 0.7em;
+    }
+    #share-buttons img{
+                width: 25px;
+    }
+}

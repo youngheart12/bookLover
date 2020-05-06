@@ -35,12 +35,13 @@ export class displayInfo extends Component {
             <Jumbotron className="dashboardChildWrapper">
             {this.state.countIncrease>0?
             <div className="dashboardChildInsideWrapper">
-            <h2>You  have {this.state.countIncrease} collection  <span role="img">&#128525;</span></h2>
-            <p id="openCreatorContent" onClick={this.showHideHandler} >Create More Collection here <span>&#128071;</span></p>   
+            <h2>You  have {this.state.countIncrease} collection  <span role="img" aria-label="happy emoji">&#128525;</span></h2>
+            <p id="openCreatorContent" onClick={this.showHideHandler} >Create More Collection here <span role="img" aria-label="sad emoji"> &#128071;</span></p>   
            <small style={{color:"grey"}}> Share your book collection with your friends</small>
             {/* share buttons */}
             
             <div id="share-buttons"> 
+            
              <a href="https://www.facebook.com/sharer.php?u=https://frinmash.blogspot.com" target="_blank">
                  <img src="https://4.bp.blogspot.com/-raFYZvIFUV0/UwNI2ek6i3I/AAAAAAAAGSA/zs-kwq0q58E/s1600/facebook.png" alt="Facebook" />
                  </a> 

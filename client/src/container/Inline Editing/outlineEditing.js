@@ -68,12 +68,8 @@ function InlineEdit(props) {
       ref={inputRef}
       // set the width to the input length multiplied by the x height
       // it's not quite right but gets it close
-      style={{
-       width:"820px",
-       height:"100px"
-        
-       
-      }}
+      
+      id="editableTextArea"
       value={inputValue}
      
       onChange={e => {
@@ -88,11 +84,8 @@ function InlineEdit(props) {
     ref={inputRef}
     // set the width to the input length multiplied by the x height
     // it's not quite right but gets it close
-    style={{
-      minWidth: 50+"ch"
-      
-     
-    }}
+    
+    id="editableInput"
     value={inputValue}
     maxLength="50"
     onChange={e => {
@@ -102,7 +95,7 @@ function InlineEdit(props) {
     className={`inline-text_input inline-text_input--${
       isInputActive ? "active" : "hidden"
     }`}
-   id="one"
+   
   />  
     
     }

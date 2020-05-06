@@ -6,9 +6,9 @@ const featuredBooksComponent=(props)=>{
         <div className="parentF" style={{backgroundColor:`${props.colorBg}`}}>
 
         <div className="childF1">
-            <span class="fa-stack fa-2x" id="iconparent">
-                <i class="fas fa-circle fa-stack-2x" style={{color:"rgba(0,0,0,0.5)"}}></i>
-               <i class="fas fa-graduation-cap fa-stack-1x fa-inverse"></i>
+            <span className="fa-stack fa-2x" id="iconparent">
+                <i className="fas fa-circle fa-stack-2x" style={{color:"rgba(0,0,0,0.5)"}}></i>
+               <i className="fas fa-graduation-cap fa-stack-1x fa-inverse"></i>
            </span>
         </div>
         
@@ -19,9 +19,9 @@ const featuredBooksComponent=(props)=>{
         
         <div className="childF3">
             <span>
-           <i class="fas fa-download" id="downloadIcon"></i>
+           <i className="fas fa-download" id="downloadIcon"></i>
            <br></br>
-           <i class="fas fa-heart" id="heartIcon"></i>
+           <i className="fas fa-heart" id="heartIcon"></i>
            </span>
         </div>
         

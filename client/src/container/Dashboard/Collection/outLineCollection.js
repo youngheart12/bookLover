@@ -4,18 +4,21 @@ import * as actionCreator from '../../../action/Collection/collectionAction';
 import {getUserId} from '../../../action/StoredStore/presistStore';
 import OutlineNoteBook from '../../OutlineNotebook/outLineNotebook';
 import {Spinner } from 'reactstrap';
-
+import './outLineCollection.css';
 export class outLineCollection extends Component {
     state={
         datalist:this.props.collection.userCollection,
-        createNewList:false
+        createNewList:false,
+        mobileView:null
     }
    
     componentDidMount()
     {
         const userId=getUserId();
         this.props.ongetUserCollectionFunction(userId);
+        
     }
+    
     componentDidUpdate(prevProps,nextState)
     {
             if(this.props.collection.userCollection!==nextState.datalist)
@@ -91,9 +94,13 @@ export class outLineCollection extends Component {
                 }
                 
                 <div style={{textAlign:"center"}}>
-                 <span  className="plusButton" onClick={this.addNewBookCreateHandler}>
+                 {/* <span  className="plusButton" onClick={this.addNewBookCreateHandler}>
                  <i className="material-icons" style={{fontSize:"3rem"}}>add_circle</i>     
-                </span> 
+                </span>  */}
+                <span class="fa-stack fa-2x" id="iconparentCollection" onClick={this.addNewBookCreateHandler}>
+                <i class="fas fa-circle fa-stack-2x" style={{color:"rgba(0,0,0,0.5)"}}></i>
+               <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+           </span>
                 </div> 
           </div>
         )

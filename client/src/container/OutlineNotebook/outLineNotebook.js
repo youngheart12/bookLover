@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react';
-import axios from 'axios';
 import { Jumbotron, Button } from 'reactstrap';
 import './outlineNotebook.css';
 import OutlineEditing from '../Inline Editing/outlineEditing';
@@ -21,6 +20,7 @@ if(!isbook&&!isauthor&&!isreview)
     
 }
 function BookListContainerComponent(props){
+    
     const propsBookName=props.bookName?props.bookName:"Click here and start editing Your Book Name!";
     const propsAuthorName=props.authorName?props.authorName:"Click here and start editing Author Name!";
     const propsBookReview=props.bookReview?props.bookReview:"Click here and start editing Book Review";
@@ -31,7 +31,7 @@ function BookListContainerComponent(props){
     const[storeSomeEdit,setSomeEdit]=useState(false);
     const[storeMultiple,setMultiple]=useState(false);
     useEffect(() => {
-    if(storeMultiple==true)
+    if(storeMultiple===true)
     {
         setDisplayButton(false);
         setSomeEdit(true);
@@ -42,7 +42,7 @@ function BookListContainerComponent(props){
     }, [storeMultiple])
       useEffect(() => {
           console.log(storeDisplayButton,"button")
-          if(storeSomeEdit==true)
+          if(storeSomeEdit===true)
           {
               const dataToUpdate={
                   collectionId:props.templateid,
@@ -56,14 +56,15 @@ function BookListContainerComponent(props){
         
       }
         )
+       
     return(
         <div>
         <Jumbotron className="parentWrapper">
        <span style={{float:"right"}} >
   
-           <i className="material-icons" id="deleteButton" style={{padding:"10px"}} onClick={props.deleteHandler}>delete_forever</i> </span>
+           <i className="material-icons" id="deleteButton" style={{padding:"5px"}} onClick={props.deleteHandler}>delete_forever</i> </span>
          
-            <div className="childWrapper">
+            <div className="childWrapper"  >
                     <h2 ><OutlineEditing 
                     text={storeBookName} onSetText={text=>setBookName(text)}
                     editMode={storeDisplayButton}
@@ -72,9 +73,15 @@ function BookListContainerComponent(props){
                      <p className="review">
                         <OutlineEditing  textAreaNeeded="true" text={storeBookReview} onSetText={text=>setBookReview(text)}  editMode={storeDisplayButton}></OutlineEditing>
                      </p> 
-                    <Button color="danger" disabled={!storeDisplayButton} onClick={()=>setMultiple(true)}>Edit Done</Button>
-                    <Button color="success"  disabled={storeDisplayButton}onClick={()=>setDisplayButton(true)}>Start Edit</Button>
-            </div>
+                     <div className="button-mob">
+                     <Button color="danger" disabled={!storeDisplayButton} onClick={()=>setMultiple(true)} size="sm">Edit Done</Button>
+                    <Button color="success"  disabled={storeDisplayButton}onClick={()=>setDisplayButton(true)} size="sm">Start Edit</Button>
+                     </div>
+                     <div className="button-desk">
+                    <Button color="danger" disabled={!storeDisplayButton} onClick={()=>setMultiple(true)} >Edit Done</Button>
+                    <Button color="success"  disabled={storeDisplayButton}onClick={()=>setDisplayButton(true)} >Start Edit</Button>
+                    </div>
+                    </div>
         </Jumbotron>
         
         </div>

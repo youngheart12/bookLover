@@ -34,7 +34,8 @@ export class signup extends Component {
         }
        
         return (
-            <div className="parentModel">
+            <div className="parentModelSignup" style={{height:window.innerHeight}}>
+                <div className="parentModelSignup-mob">
                   <nav>
                   <a href="/login">Login <span>&#8594;</span></a>
               </nav>
@@ -55,10 +56,11 @@ export class signup extends Component {
                         <br></br><br></br>
                         
                         <Button color="success" onClick={this.handleSubmit} block>Signup</Button>
-                        <br></br>
-                        <small style={{color:"#5D5F5C"}}><a href="/">Home</a></small>
+                        <small ><a href="/" style={{color:" #FFAF5F",opacity:"0.7"}}>Home</a></small>
+                        
                       
                    </form>
+                </div>
                 </div>
             </div>
         )

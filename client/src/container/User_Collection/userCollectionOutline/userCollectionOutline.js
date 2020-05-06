@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React from 'react';
 import {Card,CardBody,CardHeader, CardFooter} from 'reactstrap';
 import './userCollectionComponent.css';
 const UserCollectionComponent=(props)=>{
@@ -9,7 +9,7 @@ const UserCollectionComponent=(props)=>{
 
                 {!props.isImg ?
                    <CardHeader style={{padding:"10px",textAlign:"center"}}>
-                            <img src={require('../../../image/dilip.jpg')} width="100px" height="100px" style={{borderRadius:"50%"}}></img> 
+                            <img src={require('../../../image/dilip.jpg')} width="100px" height="100px" style={{borderRadius:"50%"}} alt="profile_pic"></img> 
                     </CardHeader>:
                     <CardHeader style={{padding:"10px",textAlign:"center",backgroundColor:"mediumseagreen",color:"white"}}>
                        <span class="fa-stack fa-2x" >

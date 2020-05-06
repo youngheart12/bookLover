@@ -64,7 +64,6 @@ export default function (state=initialState,action) {
         }
         case actionType.CREATE_COLLECTION_FAIL:
         case actionType.UPDATE_COLLECTION_FAIL:
-        case actionType.UPDATE_COLLECTION_FAIL:
         case actionType.GET_ALL_COLLECTION_FAIL:
         case actionType.GET_COLLECTION_BY_USER_FAIL:
         case actionType.DELETE_COLLECTION_FAIL:{

@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import useKeypress from '../../Inline Editing/hooks/useKeyPress'
 import useOnClickOutside from "../../Inline Editing/hooks/useOnClickOutside";
-import {Tooltip} from 'reactstrap';
 import './outLineProfile.css';
 import DOMPurify from "dompurify";
 
 function InlineEdit(props) {
   const [isInputActive, setIsInputActive] = useState(false);
-  const [tooltipOpen, setTooltipOpen] = useState(false);
+  
   const [inputValue, setInputValue] = useState(props.text);
-  const toggle = () => setTooltipOpen(!tooltipOpen);
+ 
   const wrapperRef = useRef(null);
   const textRef = useRef(null);
   const inputRef = useRef(null);

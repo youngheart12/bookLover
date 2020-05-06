@@ -6,7 +6,7 @@ nav {
     opacity: 90%;
     box-sizing: border-box;
 }
-nav a{
+.nav-body nav a{
     padding: 15px;
     color: #FFAF5F;
     text-decoration: none;
@@ -21,11 +21,14 @@ nav a{
 .nav-header h2{
     padding: 10px;
 }
-nav{
+.nav-header h4{
+    padding: 10px;
+}
+.nav-body nav{
     text-align: right;
     background-color: #3C242E;
 }
-nav a:hover{
+.nav-body nav a:hover{
     color: #262833;
     background-color: #FFAF5F;
     border-radius: 5%;
@@ -35,9 +38,7 @@ nav a:hover{
    opacity: 87%;
 }
 
-nav a:active{
-    color: white;
-}
+
 
 
 .authentication-flex{
@@ -62,9 +63,7 @@ nav a:active{
         display: flex;
         color: white;
     }
-    nav{
-        padding:0px;
-    }
+   
     .authenticate-mob-open{
         display: flex;
         flex-direction: column;
@@ -73,9 +72,21 @@ nav a:active{
        height: 100%;
        
     }
-    nav{
+    .nav-mob nav{
         text-align: left;
         padding: 15px;
+        background-color: #3C242E;
     }
-    
+    .nav-mob nav a{
+        display: block;
+        padding: 15px;
+        color: #ffa55f;
+        font-size: 1em;
+        opacity: 0.8;
+        font-family:'Titillium Web', sans-serif;
+       
+    }
+    .nav-mob nav a:hover{
+        opacity: 1;
+    }
 }

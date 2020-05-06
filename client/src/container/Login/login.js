@@ -8,18 +8,7 @@ export class login extends Component {
         email:"",
         password:""
     }
-    // handleSubmit=(e)=>{
-    //  e.preventDefault();
-    //  var form=document.querySelector("form");
-    //  if(this.state.emailValidate && form[1].value!=="")
-    //  {
-    //      console.log(form[0].value,form[1].value);
-         
-    //  }else{
-    //      alert("cannot be submiited");
-    //  }
-     
-    // }
+   
     onKeyUpHandler=(e)=>{
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value))
         {
@@ -53,10 +42,11 @@ export class login extends Component {
         }
         return (
             <div className="parentModel">
+                <div className="parent-mob-wrapper">
                 <nav>
                     <a href="/signup">Signup <span>&#8594;</span></a>
                 </nav>
-                <div className="loginModel">
+                <div className="loginModel" style={{margin:"0px"}}>
                    
                     <h1>Here you can login</h1>
                     <p style={{color:"#5D5F5C"}}>Lets's join us :)</p>
@@ -65,16 +55,17 @@ export class login extends Component {
                         <label name="Email">Email</label>
                         <br></br>
                         <input type="email" name="email" onBlur={this.onKeyUpHandler} onChange={this.changeHandler}></input>
-                       {this.state.emailValidate?null:<div><label style={{color:"red"}}>Mail address seems incorrect</label><br></br></div>} 
+                       {this.state.emailValidate?null:<div><label  id="errorMessage">Mail address seems incorrect</label></div>} 
                         <label name="Password" >Password</label>
                         <br></br>
                         <input type="password"  name="password"onChange={this.changeHandler}></input>
                         <br></br><br></br>
                         <button className="loginbutton" onClick={this.handleSubmit}><p>Login</p></button>
                         <br></br>
-                        <small style={{color:"#5D5F5C"}}><a href="#">Forgotten Password</a></small>
-                        <small style={{float:"right",color:"#BE93C5"}}><a href="/">Home</a></small>
+                        <small ><a href="#" style={{color:"#FFAF5F",opacity:"0.7"}}>Forgotten Password</a></small>
+                        <small style={{float:"right"}}><a href="/" style={{color:" #FFAF5F",opacity:"0.7"}}>Home</a></small>
                     </form>
+                </div>
                 </div>
             </div>
         )

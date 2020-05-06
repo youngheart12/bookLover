@@ -4,7 +4,7 @@ import AllCard from '../cards/allCards'
 import FeaturedBooks from '../Featured_Books/fetauredBooks'
 import UserCollection from '../../container/User_Collection/userCollection'
 import Authentication from '../../container/Authentication/authentication';
-import Banner from '../Banner/banner';
+//import Banner from '../Banner/banner';
 export class Homepage extends Component {
   
   render() {

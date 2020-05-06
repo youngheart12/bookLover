@@ -1,5 +1,5 @@
 import React from 'react'
-import {Row,Col,Card, CardBody, CardHeader, Jumbotron, Button} from 'reactstrap';
+
 import FeaturedBooksComponent from './featuredBooksComponent';
 import './fetauredBooks.css';
 export default function fetauredBooks() {

@@ -22,6 +22,7 @@
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
+
 }
 #deleteButton:hover{
     color:red
@@ -42,4 +43,42 @@
     40%, 60% {
       transform: translate3d(4px, 0, 0);
     }
+  }
+  .button-mob{
+    display: none;
+  }
+
+
+  @media only screen and (max-width:800px){
+    .childWrapper{
+      margin: 0px 0px 16px;
+      padding: 32px 16px;
+      box-sizing: border-box;
+      text-align: center;
+  }
+  .childWrapper h2{
+    font-size: 1em;
+  }
+  #createCollection{
+    font-size: 0.8em;
+    margin-top:10px;
+    opacity: 0.8;
+  }
+  .review{
+    font-size: 0.8em;
+  }
+  #deleteButton{
+    cursor: pointer;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  font-size: 1.2em;
+}
+.button-desk{
+  display: none;
+}
+.button-mob{
+  display: block;
+}
   }
