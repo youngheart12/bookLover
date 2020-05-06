@@ -3,7 +3,7 @@ nav {
     background-color: #262833;
     padding: 15px;
     font-family: 'Titillium Web', sans-serif;
-    opacity: 90%;
+    opacity: 0.9;
     box-sizing: border-box;
 }
 .nav-body nav a{
@@ -35,7 +35,7 @@ nav {
     text-decoration: none;
    padding: 0px;
    padding: 10px 20px;
-   opacity: 87%;
+   opacity: 0.9;
 }
 
 

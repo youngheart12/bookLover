@@ -11,7 +11,7 @@
   font-family:  'Titillium Web', sans-serif;
   font-weight: bold;
   text-decoration: underline;
-  opacity: 87%;
+  opacity: 0.8;
   margin:0px
   
 }
@@ -50,7 +50,7 @@ margin: 15px;
   font-family:  'Titillium Web', sans-serif;
   font-weight: 800;
   color: white;
-  opacity: 87%;
+  opacity: 0.9;
  
   margin-top: 10px;
 }

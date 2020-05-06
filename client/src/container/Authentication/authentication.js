@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './authentication.css';
-import {Button} from 'reactstrap';
+
 import { connect } from 'react-redux';
 export class authentication extends Component {
   state = {
