@@ -3,7 +3,7 @@ import {Switch,Route} from 'react-router-dom';
 import Homepage from './component/Homepage/homepage';
 import Signup from './container/Singup/signup';
 import Login from './container/Login/login';
-import './app.css'
+
 import Dashboard from './container/Dashboard/dashboard';
 export class App extends Component {
   render() {
