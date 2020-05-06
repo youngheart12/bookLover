@@ -1,9 +1,0 @@
-:root{
-    --primary-color:#707EDF;
-    --primary-v-color:#C9CFF4;
-    --secondary-color:#F6F9FE;
-    --secondary-v-color:#D4D6DC
-}
-body{
-    background-color: var(--primary-color);
-}
