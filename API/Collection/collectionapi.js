@@ -1,9 +1,9 @@
-import { Router } from 'express';
-import User from '../../Model/USER_PROFILE/userProfile';
-import IndCollection from '../../Model/Collection/collection';
-import AllCollection from '../../Model/UserCollection/userCollection';
+const express = require('express');
+const router =  express.Router();
+const User = require('../../Model/USER_PROFILE/userProfile');
+const IndCollection =require('../../Model/Collection/collection');
+const AllCollection =require( '../../Model/UserCollection/userCollection');
 
-const router = Router();
 router.post('/owner/:userId',async(req,res)=>{
     const {userId}=req.params;
 
@@ -61,4 +61,4 @@ router.get('/showCollection',async(req,res)=>{
     const allCollection=await AllCollection.find();
     res.status(200).send(allCollection);
 })
-export default router;
+module.exports=router;

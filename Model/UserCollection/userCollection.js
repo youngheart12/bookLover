@@ -1,4 +1,5 @@
-import {Schema,model} from 'mongoose';
+const mongoose=require('mongoose');
+const Schema=mongoose.Schema;
 const UserCollectionSchema=new Schema({
     name:{
         type:String,
@@ -11,5 +12,6 @@ const UserCollectionSchema=new Schema({
   
 
 })
-const UserCollection=model('collection',UserCollectionSchema);
-export default UserCollection;
+const UserCollection=mongoose.model('collection',UserCollectionSchema);
+
+module.exports=UserCollection;

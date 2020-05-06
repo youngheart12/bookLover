@@ -1,22 +1,19 @@
 
-  
-import { Router } from 'express';
-import bcrypt from 'bcryptjs';
-
-import config from '../../config';
-import jwt from 'jsonwebtoken';
+const express = require('express');
+const router = express.Router();
+const bcrypt=require('bcryptjs')
+const jwt=require('jsonwebtoken')
+const config=require('config');
 
 // User Model
-import User from '../../Model/USER_PROFILE/userProfile';
-import UserCollection from '../../Model/UserCollection/userCollection';
+const User = require('../../Model/USER_PROFILE/userProfile');
+const UserCollection =require('../../Model/UserCollection/userCollection');
 
-const { JWT_SECRET } = config;
-const router = Router();
+const JWT_SECRET=config.get('jwtSecret');
+
 
 /**
- * @route   POST api/auth/login
- * @desc    Login user
- * @access  Public
+ * Public
  */
 
 router.post('/login', async (req, res) => {
@@ -58,9 +55,9 @@ router.post('/login', async (req, res) => {
 });
 
 /**
- * @route   POST api/users
- * @desc    Register new user
- * @access  Public
+ *    POST api/users
+ *     Register new user
+ *   Public
  */
 
 router.post('/signup', async (req, res) => {
@@ -116,4 +113,4 @@ router.post('/signup', async (req, res) => {
 
 
 
-export default router;
+module.exports=router;

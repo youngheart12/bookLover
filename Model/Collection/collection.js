@@ -1,4 +1,5 @@
-import {Schema,model} from 'mongoose';
+const mongoose=require('mongoose');
+const Schema=mongoose.Schema;
 const IndCollectionSchema=new Schema({
     bookTitle:{
         type:String,
@@ -15,5 +16,6 @@ const IndCollectionSchema=new Schema({
    
 
 })
-const IndCollection=model('indcollection',IndCollectionSchema);
-export default IndCollection;
+const IndCollection=mongoose.model('indcollection',IndCollectionSchema);
+
+module.exports=IndCollection
