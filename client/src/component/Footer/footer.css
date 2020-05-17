@@ -38,20 +38,53 @@
 #twitter:hover{
     color: #55acee;
 }
+.div1{
+    padding: 30px 0px;
+}
+.div2{
+    padding: 30px 0px;
+}
+div.footerQuick{
+    display: none;
+}
 @media only screen and (max-width:800px)
 {
+    #footerHeader{
+        color: white;
+    }
+    .footerQuick{
+        padding: 15px;
+       
+    }
+    .footerQuick a{
+        text-decoration: none;
+        color: #bdbdbd;
+    }
+    .div1{
+        padding: 15px;
+        color: #bdbdbd;
+    }
+    .div2{
+        padding: 15px;
+        margin-bottom: 8px;
+        color: #bdbdbd;
+    }
     .address{
-        font-size: 0.8em;
+    display: none;
     }
     .footermedia{
         display: flex;
         align-items: center;
         justify-content: center;
-        background-attachment: #131419;
+        background-color: #424242;
+        margin-top: 10px;
+        padding: 10px 0px;
+
     }
     .footermedia .fab{
         padding: 0px 15px;
         font-size: 1.5em;
        
     }
+    
 }
