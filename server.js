@@ -36,6 +36,7 @@ mongoose
 
 app.use('/api/auth', require('./API/Auth/auth'));
 app.use('/api/collection',require('./API/Collection/collectionapi'));
+app.use('/bookdetail',require('./API/BookCollection/bookCollection'));
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {

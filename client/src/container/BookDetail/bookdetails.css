@@ -1,0 +1,87 @@
+.bookdetails{
+    display: flex;
+    flex-direction: row;
+}
+.bookdetailsContent{
+    margin:5px 15px;
+}
+.bookdetailsContent  h3{
+    font-family: 'Montserrat', sans-serif;
+}
+.bookdetailsContent p{
+    font-family: 'Poppins', sans-serif;
+}
+.bookdetailsRating{
+    display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+}
+.bookdetailsRating>div{
+    margin: 0px 10px;
+    padding:8px 16px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    text-align: center;
+    font-size: 0.8em;
+    min-width: 60px;
+    min-height: 60px;
+}
+.aboutAuthor{
+    height: 210px;
+}
+.aboutAuthor h6{
+    font-family: 'Montserrat', sans-serif;
+ margin-top: 10px;
+}
+.aboutAuthor p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+}
+.RateIt{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.RateIt>div{
+    margin: 15px;
+}
+.desktopViewBookDetails{
+    display: block
+}
+.mobileViewBookDetails{
+    display: none;
+}
+.RateItMob{
+    display: none;
+}
+@media only screen and (max-width:800px){
+    .bookdetailsRating{
+        display: flex;
+        flex-wrap: nowrap;
+    }   
+
+    .desktopViewBookDetails{
+        display: none;
+    }
+    .mobileViewBookDetails{
+        display: block;
+        margin-bottom: 24px;
+       
+    }
+    .footerCardicons{
+        display: flex;
+        flex-direction: row;
+    }
+    .footerCardicons>div{
+        padding:0px 15px;
+        box-sizing: border-box;
+    }
+    .RateIt{
+        display: none;
+    }
+    .RateItMob{
+        display: block;
+        padding: 15px;
+    }
+}

@@ -36,7 +36,7 @@ import { Row,Col,Spinner} from 'reactstrap';
                 <br></br>
 
             </div>
-
+          
             <div  className="userCollectionWrapper">
                
                 <Row>
@@ -54,28 +54,7 @@ import { Row,Col,Spinner} from 'reactstrap';
                 </Row>
                 
             </div>
-
-            {/* <div  className="userCollectionWrapperMob">
-               
-                
-                {(isLoading)?<div className="spinnerWrap">
-                   
-                <Spinner color="primary" type="grow"></Spinner>
-                <Spinner color="primary" type="grow"></Spinner>
-                <Spinner color="primary" type="grow"></Spinner>
-                <Spinner color="primary" type="grow"></Spinner>
-                <Spinner color="primary" type="grow"></Spinner>
-                
-                </div>:showCollection.map((user,id)=>{
-                return <div className="flex-item"><UserCollectionOutline  key={id}isImg={user.isImg} aboutUser={user.about} firstLetter={user.name} id={user.id} launchHandler={()=>this.launchHandler(user.id)}></UserCollectionOutline></div>
-                })}
-               
-                
-            </div> */}
-
-     
-                
-            </div>
+             </div>
         )
     }
 }

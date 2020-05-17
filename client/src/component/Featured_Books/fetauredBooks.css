@@ -1,123 +1,82 @@
 
 
-/* extra */
-.featuredExtra{
-  margin:2em; 
-}
 
 
-.featuredExtra h2{
-  color:#ffaf5a;
-  font-family:  'Titillium Web', sans-serif;
-  font-weight: bold;
-  text-decoration: underline;
-  opacity: 0.8;
-  margin:0px
-  
-}
-.featuredExtraInside{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
 
 
-}
-.featuredExtraInside>div{
-margin: 15px;
-  
-}
-.parentF{
-  display: flex;
-  flex-direction: row;
-  background-color: slateblue;
-  border-radius: 25px;
-  box-shadow: 0px 10px 5px 0 rgba(0,0,0,0.5);
-  box-sizing: border-box;
+/* //new edit */
+.mainContainer{
+margin: 2em;
 }
 
-.childF3{
-  background-color:rgba(0,0,0,0.5);
-  color: white;
-  opacity: 0.7;
-  font-size: 1.2em;
-  border-top-right-radius: 25px;;
-  border-bottom-right-radius:25px ;
-}
-.parentF>div{
-  padding: 10px;
-}
-.childF2{
-  font-family:  'Titillium Web', sans-serif;
-  font-weight: 800;
-  color: white;
-  opacity: 0.9;
+.bookListJumbo{
+  background-image: url('../../image/croods.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0px;
+  box-sizing: border-box; 
  
-  margin-top: 10px;
 }
-.smallClass{
-  font-family: 'Roboto', sans-serif;
-  color:black;
-  font-weight: 600;;
+.bookListContainer{
+  display: flex;
+  margin-right:10em;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+ overflow-x: scroll;
+ 
 }
-.childF3:hover{
-  opacity: 1;
+.bookListContainer::-webkit-scrollbar {    display: none;}
+.bookListContainer>div{
+  margin-right: 1em;
+  height: 275px;
 }
-#downloadIcon:hover{
-  color: mediumseagreen;
-  opacity: 1;
-  transition: ease-in-out color 0.2s;
-  
-  cursor: pointer;
+div.bookListJumbo.jumbotron
+{
+  background-color:#9fa9be;
 }
-#heartIcon:hover{
-  color: #EC5757;
-  transition: ease-out color 0.5s;
-  cursor: pointer;
+
+.bookListContainer img:hover{
+  opacity: 0.8;
 }
-.infoBoxFeatured{
+.headTitleFeatureDesktop{
+  margin:25px;
+
+
+}
+.headTitleFeatureMob{
   display: none;
 }
-@media only screen and (max-width: 800px)
+
+@media only screen and (max-width:800px)
 {
- 
-  .featuredExtra h2{
-    font-size: 1.2em;
+  .headTitleFeatureDesktop{
+    display: none;
   }
- 
-  .featuredExtraInside>div{
-    margin: 10px;
-  }
-  .parentF{
-    width: 100%;
-  }
-  .parentF>div{
-    padding: 0px;
-  }
-  #iconparent{
+  .headTitleFeatureMob{
+    display: block;
+    margin: 45px;
     font-size: 1.5em;
   }
-  .childF1{
-    margin-top: 5px;
-  }
-  .childF2{
-    flex-grow: 1;
-  }
-  .childF2 h5{
-    font-size: 0.8em;
-  }
-  .childF3{
- 
-    flex-grow: 0.5;
-    justify-content: center;
-    text-align: center
+  .mainContainer{
+    margin: 0px;
+    font-size: 0.7em;
+   }
+  div.bookListJumbo.jumbotron {
+    background-image: none;
+   
+
+    margin: 0px;
     
+    background-color:#9fa9be;
   }
-  .infoBoxFeatured{
-    padding: 32px 16px;
-    margin: 0px 0px 32px;
-    background-color: seashell;
-  font-family:  'Titillium Web', sans-serif;
+  .bookListContainer{
+    margin-right: 0px;
+  }
+  .bookListContainer>div{
+    margin-right: 1em;
   
   }
- 
+  
 }

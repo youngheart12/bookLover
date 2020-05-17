@@ -1,0 +1,26 @@
+.aboutpage{
+    background-image: url('../../image/open-peeps.png');
+    height: 100vh;
+    background-repeat: no-repeat;
+   
+    justify-content: center;
+    color: white;
+    background-position: left;
+    margin: 5em;
+}
+.aboutpage h3{
+ font-family: 'Montserrat', sans-serif;
+ display: block;
+ text-align: center;
+}
+.aboutpage p{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 1.3em;
+    word-spacing: 1px;
+}
+.aboutpage p:hover
+{
+    transition: color 0.3s ease-in-out;
+    color:lightblue;
+}

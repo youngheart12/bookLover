@@ -159,3 +159,66 @@ export const deleteOneCollectionFunction=(collectionId)=>{
             })
         }
 }
+
+
+//@getallbook
+
+export const getBookCollectionList=()=>{
+    return function(dispatch)
+    {
+        axios.get(`api/collection/bookcollectionlist`).then((res)=>{
+            dispatch({
+                type:actionType.BOOKLIST_COLLECTION,
+                payload:res.data
+            })
+        }).catch((err)=>{
+            dispatch({
+                type:actionType.BOOKLIST_COLLECTION_FAIL,
+                payload:err
+            })
+        })
+    }
+}
+
+
+
+//@getallbookspecific
+
+export const getBookCollectionListSpecific=()=>{
+    return function(dispatch)
+    {
+        axios.get(`api/collection/bookcollectionlist`).then((res)=>{
+            dispatch({
+                type:actionType.BOOKLIST_COLLECTION_SPECIFIC,
+                payload:res.data
+            })
+        }).catch((err)=>{
+            dispatch({
+                type:actionType.BOOKLIST_COLLECTION_SPECIFIC_FAIL,
+                payload:err
+            })
+        })
+    }
+}
+
+//@getallbooksingledetail
+
+export const getIndividualBookDetail=(bookId)=>{
+    return function(dispatch)
+    {
+        axios.get(`api/${bookId}`).then((res)=>{
+            dispatch({
+                type:actionType.BOOK_DETAIL_SINGLE,
+                payload:res.data
+            })
+        }).catch((err)=>{
+            dispatch({
+                type:actionType.BOOK_DETAIL_SINGLE_FAIL,
+                payload:err
+            })
+        })
+    }
+}
+
+
+

@@ -41,7 +41,7 @@ export class login extends Component {
             this.props.history.push('/');
         }
         return (
-            <div className="parentModel">
+            <div className="parentModel" style={{height:"100vh",overflowY:"hidden"}}>
                 <div className="parent-mob-wrapper">
                 <nav>
                     <a href="/signup">Signup <span>&#8594;</span></a>

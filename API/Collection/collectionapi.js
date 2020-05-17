@@ -3,7 +3,7 @@ const router =  express.Router();
 const User = require('../../Model/USER_PROFILE/userProfile');
 const IndCollection =require('../../Model/Collection/collection');
 const AllCollection =require( '../../Model/UserCollection/userCollection');
-
+const BookCollection=require('../../Model/BookCollection/bookCollection');
 router.post('/owner/:userId',async(req,res)=>{
     const {userId}=req.params;
 
@@ -61,4 +61,12 @@ router.get('/showCollection',async(req,res)=>{
     const allCollection=await AllCollection.find();
     res.status(200).send(allCollection);
 })
+
+router.get('/bookcollectionlist',async(req,res)=>{
+    const bookcollectionlist=await BookCollection.find();
+    res.status(200).send(bookcollectionlist);
+})
+
+//@getindividualbookdetails
+
 module.exports=router;
