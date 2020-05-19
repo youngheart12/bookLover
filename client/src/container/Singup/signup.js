@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {Button} from 'reactstrap';
+import {Button, Jumbotron,Row,Col, Alert} from 'reactstrap';
 import {connect} from 'react-redux';
+import Auth from '../Authentication/authentication';
+import HeadingTitle from '../../component/HeadingTitle/headingTitle';
 import *as actionCreator from '../../action/Auth/actionSingup';
 import './signup.css';
 
@@ -9,7 +11,9 @@ export class signup extends Component {
         name:"",
         password:"",
         email:"",
-        about:""
+        about:"",
+        errorStatus:false,
+        errorMessage:""
     }
    changeHandler=(e)=>{
     this.setState({
@@ -17,51 +21,88 @@ export class signup extends Component {
     })
    }
    handleSubmit=()=>{
-       const userData={
-           name:this.state.name,
-           password:this.state.password,
-           email:this.state.email,
-           about:this.state.about
+       const {name,password,email,about}=this.state;
+       if(!name||!password||!email||!about)
+       {
+           this.setState({
+               errorStatus:true,
+               errorMessage:"Fields can't be empty"
+           })
+       }else{
+              if(password.length<6)
+              {
+                  return this.setState({
+                    errorStatus:true,
+                    errorMessage:"Password atleast should have 8 charcter"
+                  })
+              }  
+              if(about.length<30)
+              {
+                 return this.setState({
+                      errorStatus:true,
+                      errorMessage:"About is too short"
+                  })
+              }
+              const userData={
+                name:this.state.name,
+                password:this.state.password,
+                email:this.state.email,
+                about:this.state.about
+            }
+           
+            this.props.onSignup(userData);
        }
-      
-       this.props.onSignup(userData);
+   
    }
-  
-    render() {
+  clearError=()=>{
+      this.setState({
+          errorStatus:false,
+          errorMessage:""
+      })
+  }
+    render() 
+    {
+       
         if(this.props.authState.isAuthenticated)
         {
             this.props.history.push('/');
         }
        
         return (
-            <div className="parentModelSignup" style={{height:window.innerHeight}}>
-                <div className="parentModelSignup-mob">
-                  <nav>
-                  <a href="/login">Login <span>&#8594;</span></a>
-              </nav>
-                <div className="singupModel">
-                    <h1>Welcome Onboard !</h1>
-                    <p style={{color:"#5D5F5C"}}>A small intro we need:)</p>
-                   <form className="signupform">
-                       <label name="name">Name</label>
-                       <input type="text" name="name" required onChange={this.changeHandler}></input>
-                       <label name="email">Email</label>
-                       <input type="email" name="email" required onChange={this.changeHandler}></input>
-                       <label name="Password">Password</label>
-                        <br></br>
-                        <input type="password" name="password" required onChange={this.changeHandler}></input>
-                        <label name="About">About you</label>
-                        <br></br>
-                        <textarea  name="about"placeholder="I am software developer at infosys and apart from being a tech lover i loves too read a lot of books" required onChange={this.changeHandler}></textarea>
-                        <br></br><br></br>
-                        
-                        <Button color="success" onClick={this.handleSubmit} block>Signup</Button>
-                        <small ><a href="/" style={{color:" #FFAF5F",opacity:"0.7"}}>Home</a></small>
-                        
-                      
-                   </form>
-                </div>
-                </div>
+            <div className="signupParentContainer">
+                <Auth></Auth>
+                <Jumbotron className="signupParentjumbo" style={{backgroundColor:"rgba(0,0,0,0.2)",padding:"0px"}}>
+                     <Row>
+                          <Col md="6" sm="12" xs="12">
+                            
+                             <form className="signupForm">
+                                <h2>Create Your Account</h2>
+                                <br></br>
+                                {this.state.errorStatus?<Alert color="danger" >{this.state.errorMessage}<p className="errorMessage" onClick={this.clearError}>close</p></Alert>:null}
+                                 <label>Username</label><br></br>
+                                 <input type="text" name="name"placeholder="Enter Your name" onChange={this.changeHandler}required/>
+                                 <label>Email</label><br></br>
+                                 <input type="email" name="email" placeholder="Enter your email" onChange={this.changeHandler}required/>
+                                 <label>Password</label><br></br>
+                                 <input type="password" name="password" placeholder="Enter your password" onChange={this.changeHandler}required/>
+                                 <label>About you</label><br></br>
+                                 <textarea  placeholder="A bit about you and your profession" name="about" onChange={this.changeHandler}></textarea>
+                             </form>
+                             <div style={{margin:"10px 45px"}}>
+                                 <Button  outline style={{backgroundColor:"#0BC6D5",border:"1px solid #0BC6D5",color:"white",padding:"5px 35px",boxShadow:"20px 20px 100px 10px rgba(0,0,0,0.5)",marginBottom:"10px"}} onClick={this.handleSubmit} id="submitbtn">Submit</Button>
+                            
+                             </div>
+                             
+                      </Col>
+                          <Col md="6" sm="12" xs="12">
+                          <div className="signupImage">
+                             
+                             
+                          </div>
+                          </Col>
+                    </Row>
+                  
+                </Jumbotron>
             </div>
         )
     }

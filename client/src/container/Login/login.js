@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import './login.css';
 import {connect} from 'react-redux';
 import {loginUserFunction} from '../../action/Auth/actionSingup';
+import Auth from '../Authentication/authentication';
+import { Button, Alert } from 'reactstrap';
+import {GoogleLogin} from 'react-google-login';
 export class login extends Component {
     state={
         emailValidate:true,
@@ -41,12 +44,12 @@ export class login extends Component {
             this.props.history.push('/');
         }
         return (
-            <div className="parentModel" style={{height:"100vh",overflowY:"hidden"}}>
-                <div className="parent-mob-wrapper">
+            <div>
+            <div className="parentModel" >
                 <nav>
                     <a href="/signup">Signup <span>&#8594;</span></a>
                 </nav>
-                <div className="loginModel" style={{margin:"0px"}}>
+                <div className="loginModel" style={{marginTop:"0px"}}>
                    
                     <h1>Here you can login</h1>
                     <p style={{color:"#5D5F5C"}}>Lets's join us :)</p>
@@ -66,7 +69,36 @@ export class login extends Component {
                         <small style={{float:"right"}}><a href="/" style={{color:" #FFAF5F",opacity:"0.7"}}>Home</a></small>
                     </form>
                 </div>
+            </div>
+            <div className="parentModelMob">
+              
+              <h1>Login</h1>
+              
+                <div className="loginModelMob">
+                   <div style={{marginTop:"3em"}}>
+                
+                        <form className="loginModelForm">
+                    {this.state.emailValidate?null: <Alert color="danger" style={{fontSize:"0.9em"}}>Email is invalid</Alert>}
+                            <input type="email" name="email" placeholder="Username" onBlur={this.onKeyUpHandler} onChange={this.changeHandler}></input>
+                            <input type="password" name="password" placeholder="Password"  onChange={this.changeHandler}></input>
+                            
+                        </form>
+                        <div style={{margin:"0px 2em"}}>
+                        <Button color="primary"style={{borderRadius:"25px"}}block onClick={this.handleSubmit}>Login</Button>
+        
+                        </div>
+                        <div className="loginHr">
+                           <hr></hr> 
+                        </div>
+                        <div className="loginFooter">
+                        <small>Don't have an account? <a href="/signup">Signup</a></small>
+                        </div>
+                       
+                      
+                   </div>
+                    
                 </div>
+            </div>
             </div>
         )
     }

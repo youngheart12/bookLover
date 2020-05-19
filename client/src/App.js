@@ -7,6 +7,7 @@ import BookDetail from './container/BookDetail/bookdetails';
 import Dashboard from './container/Dashboard/dashboard';
 import SelectedGener from './container/SelectedGenre/selectedGener';
 import About from './component/About/about';
+import Protected from './container/protected/protected';
 export class App extends Component {
   render() {
     return (
@@ -14,11 +15,12 @@ export class App extends Component {
      <Route exact path="/" component={Homepage}></Route>
      <Route path="/login" component={Login}></Route>
      <Route path="/signup" component={Signup}></Route>
-     <Route path="/dashboard" component={Dashboard}></Route>
+     <Protected path="/dashboard" component={Dashboard}></Protected>
      <Route path="/bookdetail/:bookId" component={BookDetail}></Route>
      <Route path="/gener" component={SelectedGener}></Route>
      <Route path="/about" component={About}></Route>
      </Switch>
+  
     )
   }
 }

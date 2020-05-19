@@ -24,6 +24,7 @@ margin: 2em;
   align-items: center;
   flex-direction: row;
   text-align: center;
+  padding: 72px;
  overflow-x: scroll;
  
 }
@@ -73,6 +74,7 @@ div.bookListJumbo.jumbotron
   }
   .bookListContainer{
     margin-right: 0px;
+    padding: -1px;
   }
   .bookListContainer>div{
     margin-right: 1em;

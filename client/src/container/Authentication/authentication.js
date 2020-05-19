@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './authentication.css';
 
 import { connect } from 'react-redux';
+import { Redirect,withRouter } from 'react-router-dom';
 export class authentication extends Component {
   state = {
     user: null,
@@ -34,7 +35,9 @@ export class authentication extends Component {
 
     sessionStorage.clear();
     this.setState({ isAuthenticated: false })
+    this.props.history.push('/');
   }
+ 
   render() {
    
     return (
@@ -127,4 +130,4 @@ export class authentication extends Component {
 const mapStateToProps = state => ({
   auth: state.auth
 })
-export default connect(mapStateToProps, null)(authentication)
+export default withRouter(connect(mapStateToProps, null)(authentication))
