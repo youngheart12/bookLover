@@ -20,9 +20,7 @@ router.post('/owner/:userId',async(req,res)=>{
 
     userProfile.ownerCollection.push(newIndCollection);
     await userProfile.save().then((num)=>{
-        res.status(200).json({
-            num
-        })
+        res.status(200).json(num)
     });
     
 })

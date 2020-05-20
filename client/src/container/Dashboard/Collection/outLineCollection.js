@@ -46,7 +46,7 @@ export class outLineCollection extends Component {
     }
     
     deleteButtonHandler=(id)=>{
-       
+       console.log("deleted",id)
         this.props.ondeleteOneCollectionFunction(id);
     //   let data1=this.state.datalist;
     //   data1.splice(id,1);
@@ -54,12 +54,12 @@ export class outLineCollection extends Component {
     }
     updatecollectionHandler=()=>{
         const updateData=JSON.parse(localStorage.getItem("datatoupdated"));
-     
+        console.log(updateData,"from outline collection")
         this.props.onupdateUserCollection(updateData);
     }
     render() {
         const {isLoading}=this.props.collection;
-       
+       console.log(this.state.datalist)
         if(this.state.datalist===null)
         {
                     return <Spinner color="success" type="grow"></Spinner>

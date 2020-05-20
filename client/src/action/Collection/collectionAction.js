@@ -99,8 +99,9 @@ export const putUserCollectionFunction=(postData)=>{
 export const updateUserCollection=(updateData)=>{
     return function(dispatch)
     {
-       
-        const {collectionId,...rest}=updateData
+       console.log(updateData,"froma ction");
+        const {collectionId,...rest}=updateData;
+
         const config={
             headers:{
                 'Content-Type':'application/json'
@@ -144,6 +145,7 @@ export const updateUserProfile=()=>{
     }
 }
 export const deleteOneCollectionFunction=(collectionId)=>{
+    console.log("reachedd here of delete",collectionId)
         return function(dispatch)
         {
             axios.delete(`api/collection/owner/update/${collectionId}`).then((res)=>{

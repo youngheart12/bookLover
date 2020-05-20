@@ -100,10 +100,7 @@ label{
         position: absolute;
         bottom: 0px;
         width: 100%;
-        
-    
-     
-       background-color: #262833;
+        background-color: #262833;
         border-top-right-radius: 45px;
         border-top-left-radius: 45px;
     }
@@ -111,24 +108,10 @@ label{
         display: none;
     }
     
-    .loginModel h1 {
-        font-size: 1.4em;
-    }
-    .loginModel p{
-        font-size: 0.9em;
-    }
-    .parent-mob-wrapper{
-        margin-top: 5em;
-    }
-    .loginform input{
-        background-color: #1C2956;
-        border:none;
-        width: 100%;
-        margin:5px 0px;
-        padding: 5px;
-        font-size: 0.9em;
-        color: white;
-    }
+    
+   
+   
+    
     #errorMessage{
         font-size: 0.9em;
     }
@@ -140,14 +123,8 @@ label{
     .loginform{
         min-width: 238px;
     }
-    .parentModel{
-        
-        align-items: baseline;
-    }
-    .parentModel nav a{
-        color: white;
-        font-size: 0.9em;
-    }
+   
+    
 
 
     /* new part */
@@ -157,13 +134,13 @@ label{
     .loginModelForm input{
         display: block;
         width: 100%;
-        padding: 12px 16px;
+        padding:12px 24px;
         margin-bottom: 15px;
         background-color: inherit;
        border-radius: 25px;
         border:1px solid grey;
         color: mistyrose;
-        font-size: 1.2em;
+        font-size: 1em;
     }
     .loginModelForm input:focus{
         outline: none;

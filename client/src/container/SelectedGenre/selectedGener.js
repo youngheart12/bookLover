@@ -31,6 +31,7 @@ export class selectedGener extends Component {
                     link={book.book_image}
                     width="183"
                     height="270"
+                    id={book._id}
            ></FeaturedBooksComponent>
            
                 }):null}

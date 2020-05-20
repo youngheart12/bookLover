@@ -4,6 +4,7 @@ import './outlineNotebook.css';
 import OutlineEditing from '../Inline Editing/outlineEditing';
 function updateWithNetwork(dataToUpdate)
 {
+    console.log(dataToUpdate,"from outline collection")
 const {bookAuthor,bookTitle,bookReview}=dataToUpdate;
 
 const regx=/\bClick.here\b/;
@@ -13,8 +14,9 @@ let isreview=regx.test(bookReview);
 if(!isbook&&!isauthor&&!isreview)
 {
   
-    dataToUpdate.firefun();
+   
     localStorage.setItem("datatoupdated",JSON.stringify(dataToUpdate));
+    dataToUpdate.firefun();
 }
     
     
@@ -51,6 +53,7 @@ function BookListContainerComponent(props){
                   bookReview:storeBookReview,
                   firefun:props.fire
               }
+              console.log(dataToUpdate,"printing")
               updateWithNetwork(dataToUpdate);
           }
         

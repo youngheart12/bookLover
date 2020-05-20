@@ -69,6 +69,7 @@ export class signup extends Component {
         }
        
         return (
+            <div>
             <div className="signupParentContainer">
                 <Auth></Auth>
                 <Jumbotron className="signupParentjumbo" style={{backgroundColor:"rgba(0,0,0,0.2)",padding:"0px"}}>
@@ -103,6 +104,25 @@ export class signup extends Component {
                     </Row>
                   
                 </Jumbotron>
+            </div>
+            <div className="signupParentContainerMob">
+                <Jumbotron style={{backgroundColor:"#3f3f44",color:"#cceabb"}} >
+                    <h6 style={{textDecoration:"underline",fontSize:"1.2em"}}>Welcome Onboard !</h6>
+                   <small style={{color:"white",fontSize:"0.9em",opacity:"87%"}}>To get started we just need few details!</small>
+                    <form className="signupFormMob">
+                        <br></br>
+                        {this.state.errorStatus?<Alert color="danger" >{this.state.errorMessage}<p className="errorMessage" onClick={this.clearError}><span><i class="far fa-window-close" style={{color:"#c02739",fontSize:"1em"}}></i></span></p></Alert>:null}
+                    <input type="text" name="name" placeholder="Enter Your Username" onChange={this.changeHandler}/>
+                    <input type="email" name="email" placeholder="Enter Your Email" onChange={this.changeHandler}/>
+                    <input type="password" name="password" placeholder="Enter Your Password" onChange={this.changeHandler}/>
+                    <textarea placeholder="A bit about you" name="about" onChange={this.changeHandler}></textarea>
+                    </form>
+                    <br></br>
+                    <Button color="success" onClick={this.handleSubmit}>Submit</Button>
+                    <br></br> <br></br>
+                    <h6>Already have an account? <a href="/login" style={{color:"#FFAF5F"}}>Login</a></h6>
+                </Jumbotron>
+            </div>
             </div>
         )
     }

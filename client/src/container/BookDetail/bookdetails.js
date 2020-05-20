@@ -14,6 +14,17 @@ export class bookdetails extends Component {
        
         this.props.ongetIndividualBookDetail(bookId);
     }
+    showNotification=()=>{
+        alert("This feature will soon be available");
+    }
+    submitFeedbackHandler=()=>{
+        if(this.props.collection.auth)
+        {
+            alert("This feature will soon be there");
+        }else{
+            alert("You must be logged in to  review this book")
+        }
+    }
     render() {
         let data;
           if(this.props.collection.bookDetail)
@@ -106,18 +117,18 @@ export class bookdetails extends Component {
                                    <div>Rate it</div>
                                
                                    <div>
-                                       <Button color="success" style={{margin:"0px"}}>Read the book</Button>
+                                       <Button color="success" style={{margin:"0px"}} onClick={this.showNotification}>Read the book</Button>
                                    </div>
                                    <div>
-                                       <Button color="success" style={{margin:"0px"}}>Download the book</Button>
+                                       <Button color="success" style={{margin:"0px"}} onClick={this.showNotification}>Download the book</Button>
                                    </div>
                                    <div>
-                                       <Button color="info" style={{margin:"0px"}}>Add to read later</Button>
+                                       <Button color="info" style={{margin:"0px"}} onClick={this.showNotification}>Add to read later</Button>
                                    </div>
                                </div>
                                <div className="RateItMob">
-                                   <Button size="md" color="success" style={{display:"inline",marginRight:"20px"}}>Read the book</Button>
-                                   <Button size="md" color="primary" style={{display:"inline"}}>Open the book</Button>
+                                   <Button size="md" color="success" style={{display:"inline",marginRight:"20px"}}  onClick={this.showNotification}>Read the book</Button>
+                                   <Button size="md" color="primary" style={{display:"inline"}}  onClick={this.showNotification}>Open the book</Button>
                                </div>
                             </Jumbotron>
                         </Col>
@@ -129,7 +140,7 @@ export class bookdetails extends Component {
                                 <hr></hr>
                                 <Input type="textarea" placeholder="Your Comment on this"style={{height:"120px"}}></Input>
                                 <br></br>
-                                <Button color="success">Submit</Button>
+                                <Button color="success" onClick={this.submitFeedbackHandler}>Submit</Button>
                             </Jumbotron>
                         </Col>
                     </Row>

@@ -85,3 +85,40 @@ flex-wrap: wrap;
         padding: 15px;
     }
 }
+
+#bookIcon{
+position: relative;
+}
+#bookIcon .tooltiptext {
+    visibility: hidden;
+    top: 100%;
+    width: 120px;
+    left: -40%;
+    right: 0%;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+  
+   opacity: 0;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  #bookIcon .tooltiptext::after{
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+  }
+  #bookIcon:hover .tooltiptext{
+visibility:visible;
+opacity: 1;
+transition:opacity 1s ease-in;
+
+  }

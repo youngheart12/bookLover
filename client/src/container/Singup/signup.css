@@ -92,10 +92,44 @@
     padding: 0px;
     margin: 45px;
 }
+.signupParentContainerMob{
+    display: none;
+}
 
 @media only screen and (max-width:800px)
 {
     .signupParentjumbo{
        display: none;
+    }
+    .signupParentContainerMob{
+        display: block;
+        margin: 1em;
+      
+    }
+    .signupFormMob input{
+        width: 100%;
+       background-color: inherit;
+       border:none;
+        margin-bottom: 25px;
+        color: #f7f7f7;
+        border-bottom: 1px double rgba(56, 97, 95, 0.7);
+       padding: 8px 12px;
+       
+       
+    }
+    .signupFormMob input:focus{
+        outline-color: #cceabb;
+    }
+    .signupFormMob textarea{
+        width: 100%;
+        background-color: inherit;
+        color: #f7f7f7;
+        height:80px;
+        font-size: 0.9em;
+        border: 1px double rgba(56, 97, 95, 0.7);
+        padding: 8px;
+    }
+    .signupFormMob textarea:focus{
+        outline-color: #cceabb;   
     }
 }

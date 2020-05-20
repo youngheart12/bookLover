@@ -65,11 +65,13 @@ export default function (state=initialState,action) {
             }
         }
         case actionType.DELETE_COLLECTION:{
-           
+           console.log(state.userCollection,"before")
             return{
                 ...state,
              userCollection:state.userCollection.filter(item=>item._id!==action.payload._id)
+             
             }
+           
         }
         case actionType.UPDATE_USER_PROFILE:{
             return{
