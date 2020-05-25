@@ -97,7 +97,7 @@ export class authentication extends Component {
         </div>
         <div style={{ display: `${this.state.current}` }} onClick={this.toggleHandlerCross}>
           <div style={{ height: "30vh", backgroundColor: "inherit", width: "100%", zIndex: 100, position: "relative", boxShadow: "0px 10px 10px 0 rgba(0,0,0,0.2)" }}></div>
-          <div className="authenticate-mob-open" style={{ top: "45px", width: "100%", zIndex: 200, position: "absolute" }}>
+          <div className="authenticate-mob-open" style={{ top: "60px", width: "100%", zIndex: 200, position: "absolute" }}>
 
             {/* authentication will go here */}
             {this.state.isAuthenticated ?
@@ -112,9 +112,11 @@ export class authentication extends Component {
               </div> :
               <div className="nav-mob">
                 <nav>
+                  <a href="/">Home</a>
                   <a href="/login">Login</a>
                   <a href="/signup">Signup</a>
                   <a href="/about">About</a>
+
                 </nav>
               </div>}
 

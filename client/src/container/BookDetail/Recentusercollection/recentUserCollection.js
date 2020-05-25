@@ -10,11 +10,11 @@ export default function recentUserCollection() {
                                 <div className="containermarquee">
                                     <div className="marquee">
                                 <div style={{color:"white",opacity:"87%",padding:"0px 16px",marginBottom:"12px"}}>Dilip Kumar <span style={{float:"right"}}>20s ago</span></div>
-                                <div style={{color:"white",opacity:"87%",padding:"0px 16px"}}>Dilip Kumar <span style={{float:"right"}}>20s ago</span></div>
-                                <div style={{color:"white",opacity:"87%",padding:"0px 16px",marginBottom:"12px"}}>Dilip Kumar <span style={{float:"right"}}>20s ago</span></div>
-                                <div style={{color:"white",opacity:"87%",padding:"0px 16px"}}>Dilip Kumar <span style={{float:"right"}}>20s ago</span></div>
-                                <div style={{color:"white",opacity:"87%",padding:"0px 16px",marginBottom:"12px"}}>Dilip Kumar <span style={{float:"right"}}>20s ago</span></div>
-                                <div style={{color:"white",opacity:"87%",padding:"0px 16px"}}>Dilip Kumar <span style={{float:"right"}}>20s ago</span></div>
+                                <div style={{color:"white",opacity:"87%",padding:"0px 16px"}}>Mayank Soni<span style={{float:"right"}}>40s ago</span></div>
+                                <div style={{color:"white",opacity:"87%",padding:"0px 16px",marginBottom:"12px"}}>Shivam Kumar <span style={{float:"right"}}>20min ago</span></div>
+                                <div style={{color:"white",opacity:"87%",padding:"0px 16px"}}>Saurabh Singh<span style={{float:"right"}}>35min ago</span></div>
+                                <div style={{color:"white",opacity:"87%",padding:"0px 16px",marginBottom:"12px"}}>Yuvraj Sharma <span style={{float:"right"}}>1hrs ago</span></div>
+                                <div style={{color:"white",opacity:"87%",padding:"0px 16px"}}>Vijay Verma <span style={{float:"right"}}>2hrs ago</span></div>
                                 </div>
                                 </div>
                             </Jumbotron>

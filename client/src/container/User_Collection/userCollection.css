@@ -1,4 +1,18 @@
-.userabout{
-    
+.usercollectiondesktopView{
+    display: block;
+}
+.userColMobView
+{
+    display: none;
+}
 
+
+@media  only  screen and (max-width:800px)
+{
+.usercollectiondesktopView{
+    display: none;
+}
+.userColMobView{
+    display: block;
+}
 }

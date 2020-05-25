@@ -33,7 +33,7 @@ function OutLineProfile() {
       
                 </div>
                 <div className="profilePic" style={{flexGrow:1}}>
-                    <img src={require('../../../image/dilip.jpg')} alt="profile_pic" width="250px" height="250px"/>
+                    {/* <img src={require('../../../image/dilip.jpg')} alt="profile_pic" width="250px" height="250px"/> */}
                 </div>
                
             </div>

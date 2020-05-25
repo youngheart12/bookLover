@@ -12,8 +12,16 @@ export class userCollection extends Component {
                <Container>
                    <Row>
                    <Col md="8">
-                        <UserCollectionComponent></UserCollectionComponent>
-                        <UserCollectionComponent></UserCollectionComponent>
+                        <UserCollectionComponent userName="Dilip Kumar" firstName="Dilip" aboutUser="
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum at tortor vel tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque a mattis justo, a malesuada ex. Nam pellentesque blandit augue, convallis ornare turpis euismod eu.
+                        " count="5" generLiked="Business"
+                        ></UserCollectionComponent>
+                        <UserCollectionComponent  userName="Mayank Soni"  firstName="Soni" aboutUser="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum at tortor vel tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque a mattis justo, a malesuada ex. Nam pellentesque blandit augue, convallis ornare turpis euismod eu."
+                        firstName="Mayank" generLiked="Fiction" count="10"></UserCollectionComponent>
+                         <UserCollectionComponent  userName="Saurabh Singh"  firstName="Saurabh" aboutUser="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum at tortor vel tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque a mattis justo, a malesuada ex. Nam pellentesque blandit augue, convallis ornare turpis euismod eu."
+                        firstName="Saurabh" generLiked="Crime" count="3"></UserCollectionComponent>
+                        
+                        
                    </Col>
                    <Col md="4">
                        <RecentUserCollection/>
