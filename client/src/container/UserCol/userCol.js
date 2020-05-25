@@ -11,7 +11,7 @@ export default function userCol() {
                         <div className="innerContentUser">
                         <h2>Collection of recommended books</h2>
                         <h4>by book lovers</h4>
-                        <button className="layoutButton"> Open Collection</button>
+                     <a href="/usercollection">  <button className="layoutButton"> Open Collection</button></a> 
                         </div>
                     </Jumbotron>
                     <div className="usercolimage">

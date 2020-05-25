@@ -5,6 +5,7 @@ import FeaturedBooks from '../Featured_Books/fetauredBooks'
 import Authentication from '../../container/Authentication/authentication';
 import Genre from '../../component/GenreCat/genrecat';
 import MonthsPick from '../../container/MonthsPick/monthsPick';
+
 import Usercol from '../../container/UserCol/userCol';
 import Footer from '../Footer/footer';
 import {connect} from 'react-redux';
@@ -41,6 +42,7 @@ export class Homepage extends Component {
      <Genre loadingState={this.state.loading} bookData={this.state.monthsPick}></Genre>
      <MonthsPick loadingState={this.state.loading} bookData={this.state.monthsPick}></MonthsPick>
      <Usercol></Usercol>
+    
       <Footer></Footer>
       
      </div>

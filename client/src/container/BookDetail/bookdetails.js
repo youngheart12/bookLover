@@ -4,6 +4,8 @@ import { Jumbotron, Container ,Row,Col, Button,Input,Card,CardBody,CardText,Card
 import {connect} from 'react-redux';
 import Skeleton,{SkeletonTheme} from 'react-loading-skeleton';
 import * as actionCreator from '../../action/Collection/collectionAction';
+import Ranking from './Ranking/ranking';
+import RecentUserCollection from './Recentusercollection/recentUserCollection';
 import IconsDiv from './iconsDiv';
 import './bookdetails.css';
 export class bookdetails extends Component {
@@ -37,17 +39,17 @@ export class bookdetails extends Component {
                 <Container>
                     <Row>
                         <Col md="8" className="desktopViewBookDetails">
-                            <Jumbotron style={{padding:"8px 8px"}}>
+                            <Jumbotron style={{padding:"12px 12px",backgroundColor:"#424242",color:"#BDBDBD",boxShadow:"10px 15px 20px 0px rgba(0,0,0,0.2)"}}>
                                
                                {data? <div className="bookdetails">
                                     <div>
-                                    <img src={data.book_image} width="183" height="275" alt="imagegroup" ></img>
+                                    <img src={data.book_image} width="183" height="275" alt="imagegroup" style={{borderRadius:"5px"}} ></img>
                                     </div>
                                     <div className="bookdetailsContent">
                                     <h4>{data.title}</h4>
-                                    <h6>{data.author}</h6>
+                                    <h6>by {data.author}</h6>
                                     <br></br>
-                                    <p>{data.description} </p>
+                                    <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English  </p>
                                     <hr></hr>
                                
                                     <div className="bookdetailsRating">
@@ -66,14 +68,14 @@ export class bookdetails extends Component {
                                
                                {data? <Card style={{boxShadow:"0px 2px 10px 0px rgba(0,0,0,0.5)"}}>
         <CardImg top width="60%" height="240px" src={data.book_image} alt="Card image cap" style={{borderRadius:"5px"}}/>
-        <CardBody>
+        <CardBody style={{backgroundColor:"#424242",color:"#BDBDBD"}}>
           <CardTitle><b>{data.title}</b></CardTitle>
           <CardSubtitle style={{fontWeight:"600"}}>by {data.author}</CardSubtitle>
           
           <CardText style={{marginTop:"5px"}}>{data.description}</CardText>
           
         </CardBody>
-        <CardFooter>
+        <CardFooter style={{backgroundColor:"#424242"}}>
             <div className="footerCardicons">
             <IconsDiv></IconsDiv>
             </div>
@@ -93,11 +95,11 @@ export class bookdetails extends Component {
                             
                             
                             {data?
-                            <Jumbotron style={{padding:"40px 16px"}}>
+                            <Jumbotron style={{padding:"16px 16px",backgroundColor:"#424242",color:"#BDBDBD",boxShadow:"10px 15px 20px 0px rgba(0,0,0,0.2)"}}>
                             <div className="aboutAuthor">
                             <small>About the author</small>
                            
-                            <h6>{data.author}</h6>
+                            <h5>{data.author}</h5>
                             <p>{data.author} is best known in the field of{data.tags[0]}. His book {data.title} is New York Times {data.rank} bestseller. {data.author} has some series of book that can make someone strong in {data.tags[0]}.Find more about {data.author}.</p>
                             </div>
                             </Jumbotron>:<SkeletonTheme color="#37474F" highlightColor="#546E7A" >
@@ -110,14 +112,15 @@ export class bookdetails extends Component {
                         </Col>
                     </Row>
                     <br></br>
+                    <Ranking></Ranking>
                     <Row>
                         <Col md="12">
-                            <Jumbotron style={{padding:"0px"}}>
+                            <Jumbotron style={{padding:"0px",backgroundColor:"inherit",border:"1px solid #DD3F77"}}>
                                <div className="RateIt" >
-                                   <div>Rate it</div>
+                                   
                                
                                    <div>
-                                       <Button color="success" style={{margin:"0px"}} onClick={this.showNotification}>Read the book</Button>
+                                       <Button color="success"  style={{margin:"0px"}} onClick={this.showNotification}>Read the book</Button>
                                    </div>
                                    <div>
                                        <Button color="success" style={{margin:"0px"}} onClick={this.showNotification}>Download the book</Button>
@@ -125,23 +128,44 @@ export class bookdetails extends Component {
                                    <div>
                                        <Button color="info" style={{margin:"0px"}} onClick={this.showNotification}>Add to read later</Button>
                                    </div>
+                                   <div>
+                                       <Button color="info" style={{margin:"0px"}} onClick={this.showNotification}>Purchase this book</Button>
+                                   </div>
+                                   <div>
+                                       <Button color="info" style={{margin:"0px"}} onClick={this.showNotification}>Add to cart</Button>
+                                   </div>
                                </div>
                                <div className="RateItMob">
-                                   <Button size="md" color="success" style={{display:"inline",marginRight:"20px"}}  onClick={this.showNotification}>Read the book</Button>
-                                   <Button size="md" color="primary" style={{display:"inline"}}  onClick={this.showNotification}>Open the book</Button>
+                                   <div>
+                                   <Button size="md" color="success" style={{display:"inline"}}  onClick={this.showNotification}>Read the book</Button>
+                                   </div>
+                                    <div>
+                                   <Button size="md" color="success" style={{display:"inline"}}  onClick={this.showNotification}>Download book</Button>
+                                   </div>
+                                   <div>
+                                   <Button size="md" color="info" style={{display:"inline"}}  onClick={this.showNotification}>Read book later</Button>
+                                   </div>
+                                   <div>
+                                   <Button size="md" color="info" style={{display:"inline"}}  onClick={this.showNotification}>Purchase  book</Button>
+                                   </div><div>
+                                   <Button size="md" color="info" style={{display:"inline"}}  onClick={this.showNotification}>Add to cart</Button>
+                                   </div>
                                </div>
                             </Jumbotron>
                         </Col>
                     </Row>
                     <Row>
-                        <Col md="12">
-                            <Jumbotron>
+                        <Col md="8">
+                            <Jumbotron style={{backgroundColor:"black",color:"wheat"}}>
                                 What People are Saying
                                 <hr></hr>
-                                <Input type="textarea" placeholder="Your Comment on this"style={{height:"120px"}}></Input>
+                                <Input type="textarea" placeholder="Your Comment on this"style={{height:"120px",backgroundColor:"rgba(0,0,0,0.5)",color:"white"}}></Input>
                                 <br></br>
                                 <Button color="success" onClick={this.submitFeedbackHandler}>Submit</Button>
                             </Jumbotron>
+                        </Col>
+                        <Col md="4">
+                          <RecentUserCollection/>
                         </Col>
                     </Row>
                 </Container>

@@ -1,36 +1,41 @@
-import React from 'react';
-import {Card,CardBody,CardHeader, CardFooter} from 'reactstrap';
-import './userCollectionComponent.css';
-const UserCollectionComponent=(props)=>{
-   
-    return (
-       <div className="usercollectionwrap">
-               <Card  className="userCollectionOutlineWrap"style={{backgroundColor:"#0C0B0D",borderRadius:"15px"}}> 
-
-                {!props.isImg ?
-                   <CardHeader style={{padding:"10px",textAlign:"center"}}>
-                            <img src={require('../../../image/dilip.jpg')} width="100px" height="100px" style={{borderRadius:"50%"}} alt="profile_pic"></img> 
-                    </CardHeader>:
-                    <CardHeader style={{padding:"10px",textAlign:"center",backgroundColor:"mediumseagreen",color:"white"}}>
-                       <span class="fa-stack fa-2x" >
-                        <i class="fas fa-circle fa-stack-2x" style={{color:"rgba(0,0,0,0.5)"}}></i>
-                        <h1 className="display-3">{props.firstLetter}</h1>
-                        </span>
-                    </CardHeader>
-                     }
-                    <p className="nameStyle" >{props.firstLetter}</p>
-             
-             <CardBody style={{color:"white",opacity:"87%",textAlign:"center"}}>
-                {props.aboutUser}
-             </CardBody>
-
-             <CardFooter style={{opacity:"0.9",color:"white",textAlign:"center"}}>
-                200<i class="fas fa-external-link-alt" style={{padding:"2px 10px"}} onClick={props.launchHandler} id="iconStyle"></i>
-                500<i class="fas fa-heart" style={{padding:"2px 10px"}} onClick={props.heartHandler} id="iconStyle"></i>
-             </CardFooter>
-         </Card>
-              
-       </div>
-    )
+import React from 'react'
+import {Row,Col,Jumbotron} from 'reactstrap';
+import '../userCollection.css';
+export default function userCollectionOutline() {
+   return (
+      <div>
+         <div className="usercollectiondesktopView">
+           <Jumbotron style={{padding:"20px",border:"3px solid pink",backgroundColor:"inherit",color:"#bdbdbd"}}>
+                            <Row>
+                                <Col md="4" style={{textAlign:"center"}}>
+                                <div style={{display:"flex",alignItems:"center",justifyContent:"center"}} >
+                                <span className="fa-stack fa-4x" >
+                    <i className="fas fa-circle fa-stack-2x" style={{color:"rgba(0,0,0,0.5)"}}></i>
+                     <i className="fas fa-user-astronaut fa-stack-1x fa-inverse"  id="genreIcon"></i>
+                </span>
+                         
+                                </div>
+                              <small style={{color:"wheat",fontSize:"1em"}}>Total Books Reviewed:45|Gener like most:Crime</small> 
+                                   
+                                </Col>
+                                <Col md="8" className="userabout">
+                                 <h2>Dilip Kumar</h2>
+                                 <small>About me</small>
+                                 <p >There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. .</p>
+                                <hr></hr>
+                                <span class="fa-stack fa-1x">
+                                  <i class="fas fa-circle fa-stack-2x" style={{color:"red"}}></i>
+                                 <i class="fas fa-heart fa-stack-1x fa-inverse"  ></i>
+                                </span>
+                                <span class="fa-stack fa-1x">
+                                  <i class="fas fa-circle fa-stack-2x" style={{color:"dodgerblue"}}></i>
+                                 <i class="fas fa-share fa-stack-1x fa-inverse"  ></i>
+                                </span>
+                                </Col>
+                            </Row>
+                            
+                        </Jumbotron>
+                        </div>
+      </div>
+   )
 }
-export default UserCollectionComponent;
