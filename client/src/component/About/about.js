@@ -3,7 +3,7 @@ import './about.css';
 import Footer from '../Footer/footer';
 import HeadingTitle from '../HeadingTitle/headingTitle';
 import FAQ from '../FAQ/faq';
-import { Alert, Fade } from 'reactstrap';
+
 export default function about() {
     return (
         <div>

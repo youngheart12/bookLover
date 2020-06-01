@@ -23,7 +23,7 @@ class Genercat extends Component  {
                     <i className="fas fa-circle fa-stack-2x" style={{color:"rgba(0,0,0,0.5)"}}></i>
                      <i className="fas fa-snowboarding fa-stack-1x fa-inverse"  id="genreIcon"></i>
                 </span>
-                <p onClick={this.searchHandler.bind(this,"action")}><a href="/gener">Action&Adventure</a></p>
+                <p onClick={this.searchHandler.bind(this,"action")}><a href="/gener">Adventure</a></p>
             </div>
           
             <div style={{backgroundColor:"#ab47bc"}} >
@@ -39,7 +39,7 @@ class Genercat extends Component  {
                     <i className="fas fa-circle fa-stack-2x" style={{color:"rgba(0,0,0,0.5)"}}></i>
                      <i className="fas fa-user-astronaut fa-stack-1x fa-inverse"  id="genreIcon"></i>
                 </span>
-                <p onClick={this.searchHandler.bind(this,"mystery")}><a href="/gener">Mystery&Thriller</a></p>
+                <p onClick={this.searchHandler.bind(this,"fiction")}><a href="/gener">Fiction</a></p>
             </div>
 
             <div style={{backgroundColor:"#ef5350"}}>
@@ -55,7 +55,7 @@ class Genercat extends Component  {
                     <i className="fas fa-circle fa-stack-2x" style={{color:"rgba(0,0,0,0.5)"}}></i>
                      <i className="fas fa-caravan fa-stack-1x fa-inverse"  id="genreIcon"></i>
                 </span>
-                <p onClick={this.searchHandler.bind(this,"fiction")}><a href="/gener">Fiction&Humour</a></p>
+                <p onClick={this.searchHandler.bind(this,"nonFiction")}><a href="/gener">Non-Fiction</a></p>
             </div>
 
             <div style={{backgroundColor:"mediumseagreen"}}>

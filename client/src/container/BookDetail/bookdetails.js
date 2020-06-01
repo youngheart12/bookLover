@@ -9,6 +9,9 @@ import RecentUserCollection from './Recentusercollection/recentUserCollection';
 import IconsDiv from './iconsDiv';
 import './bookdetails.css';
 export class bookdetails extends Component {
+    state={
+        textappend:false
+    }
     componentDidMount()
     {
         const{match:{params}}=this.props;
@@ -43,13 +46,13 @@ export class bookdetails extends Component {
                                
                                {data? <div className="bookdetails">
                                     <div>
-                                    <img src={data.book_image} width="183" height="275" alt="imagegroup" style={{borderRadius:"5px"}} ></img>
+                                    <img src={data.isBookImage?`http://books.google.com/books/content?id=${data.id}&printsec=frontcover&img=1&zoom=2&source=gbs_api`:data.nytImage} width="183" height="275" alt="imagegroup" style={{borderRadius:"5px"}} ></img>
                                     </div>
                                     <div className="bookdetailsContent">
-                                    <h4>{data.title}</h4>
-                                    <h6>by {data.author}</h6>
+                                    <h4>{data.bookName}</h4>
+                                    <h6>by {data.bookAuthor}</h6>
                                     <br></br>
-                                    <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English  </p>
+                                    <p> {data.bookDescLong.length>200?<p>{data.bookDescLong.slice(1,300)}{this.state.textappend?<React.Fragment>{data.bookDescLong.slice(300)}</React.Fragment>:<Button outline color="info"style={{padding:"0px",border:"none"}} onClick={()=>this.setState({textappend:true})}>..read more</Button>} </p>:data.bookDescLong}</p>
                                     <hr></hr>
                                
                                     <div className="bookdetailsRating">
@@ -67,12 +70,12 @@ export class bookdetails extends Component {
                         
                                
                                {data? <Card style={{boxShadow:"0px 2px 10px 0px rgba(0,0,0,0.5)"}}>
-        <CardImg top width="60%" height="240px" src={data.book_image} alt="Card image cap" style={{borderRadius:"5px"}}/>
+        <CardImg top width="60%" height="240px" src={`http://books.google.com/books/content?id=${data.id}&printsec=frontcover&img=1&zoom=2&source=gbs_api`} alt="Card image cap" style={{borderRadius:"5px"}}/>
         <CardBody style={{backgroundColor:"#424242",color:"#BDBDBD"}}>
-          <CardTitle><b>{data.title}</b></CardTitle>
-          <CardSubtitle style={{fontWeight:"600"}}>by {data.author}</CardSubtitle>
+          <CardTitle><b>{data.bookAuthor}</b></CardTitle>
+          <CardSubtitle style={{fontWeight:"600"}}>by {data.bookAuthor}</CardSubtitle>
           
-          <CardText style={{marginTop:"5px"}}>{data.description}</CardText>
+          <CardText style={{marginTop:"5px"}}>{data.bookDescShort}</CardText>
           
         </CardBody>
         <CardFooter style={{backgroundColor:"#424242"}}>
@@ -99,8 +102,8 @@ export class bookdetails extends Component {
                             <div className="aboutAuthor">
                             <small>About the author</small>
                            
-                            <h5>{data.author}</h5>
-                            <p>{data.author} is best known in the field of{data.tags[0]}. His book {data.title} is New York Times {data.rank} bestseller. {data.author} has some series of book that can make someone strong in {data.tags[0]}.Find more about {data.author}.</p>
+                            <h5>{data.bookAuthor}</h5>
+                            <p>{data.bookAuthor} is best known in the field of. His book {data.bookName} is New York Times {data.rank} bestseller. {data.bookAuthor} has some series of book that can make someone strong in.Find more .</p>
                             </div>
                             </Jumbotron>:<SkeletonTheme color="#37474F" highlightColor="#546E7A" >
                    <Skeleton height={145}></Skeleton>
@@ -112,7 +115,7 @@ export class bookdetails extends Component {
                         </Col>
                     </Row>
                     <br></br>
-                    <Ranking></Ranking>
+                    <Ranking data={data}></Ranking>
                     <Row>
                         <Col md="12">
                             <Jumbotron style={{padding:"0px",backgroundColor:"inherit",border:"1px solid #DD3F77"}}>

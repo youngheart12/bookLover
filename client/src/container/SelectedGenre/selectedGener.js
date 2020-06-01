@@ -3,7 +3,7 @@ import Auth from '../Authentication/authentication';
 import HeadingTitle from '../../component/HeadingTitle/headingTitle';
 import * as actionCreator from '../../action/Collection/collectionAction'
 import FeaturedBooksComponent from '../../component/Featured_Books/featuredBooksComponent';
-import { Container, Jumbotron, Alert} from 'reactstrap';
+import { Container, Jumbotron} from 'reactstrap';
 import {connect} from 'react-redux';
 
 import ImageCard from '../../component/ImageCard/imageCard';
@@ -35,9 +35,9 @@ export class selectedGener extends Component {
                     <Jumbotron className="bookListJumbo" style={{backgroundColor:"#B9C6C8",position:"relative"}}>
             <div className="bookListContainer">
             {data?data.map((book)=>{
-                    return  <FeaturedBooksComponent bookName={book.title}
-                    aboutBook={book.description}
-                    link={book.book_image}
+                    return  <FeaturedBooksComponent bookName={book.bookName}
+                    aboutBook={book.bookShortDesc}
+                    link={book.isBookImage?`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=2&source=gbs_api`:book.nytImage}
                     width="183"
                     height="270"
                     id={book._id}
@@ -60,9 +60,9 @@ export class selectedGener extends Component {
                    data.map((book,id)=>{
                        return<ImageCard 
                                 key={id}
-                                bookName={book.title}
-                                aboutBook={book.description}
-                                link={book.book_image}
+                                bookName={book.bookName}
+                                aboutBook={book.bookDescShort}
+                                link={book.isBookImage?`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=2&source=gbs_api`:book.nytImage}
                                 height="275"
                                 width="183"
                                 id={book._id}
@@ -85,9 +85,9 @@ export class selectedGener extends Component {
                    data.map((book,id)=>{
                        return<ImageCardMob
                                 key={id}
-                                bookName={book.title}
-                                aboutBook={book.description}
-                                link={book.book_image}
+                                bookName={book.bookName}
+                                aboutBook={book.bookDescShort}
+                                link={book.isBookImage?`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=2&source=gbs_api`:book.nytImage}
                               
                                 id={book._id}
                        ></ImageCardMob>
@@ -105,9 +105,9 @@ export class selectedGener extends Component {
                </div>
                <div className="bookListContainer">
             {data?data.map((book)=>{
-                    return  <FeaturedBooksComponent bookName={book.title}
-                    aboutBook={book.description}
-                    link={book.book_image}
+                    return  <FeaturedBooksComponent bookName={book.bookName}
+                    aboutBook={book.bookDescShort}
+                    link={book.isBookImage?`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=2&source=gbs_api`:book.nytImage}
                     width="183"
                     height="270"
                     id={book._id}

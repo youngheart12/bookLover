@@ -1,14 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {connect} from 'react-redux';
-import {Switch,Route,Redirect} from 'react-router-dom';
-import HomePage from '../../component/Homepage/homepage';
-import Signup from '../Singup/signup';
-import Login from '../Login/login';
-import Footer from '../../component/Footer/footer';
-import BookDetail from '../BookDetail/bookdetails';
-import Dashboard from '../Dashboard/dashboard';
-import SelectedGener from '../SelectedGenre/selectedGener';
-import About from '../../component/About/about';
+import {Route,Redirect} from 'react-router-dom';
+
 const data=sessionStorage.getItem("state");
 const dataid=JSON.parse(data);
 let authenticated=false;

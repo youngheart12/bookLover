@@ -11,12 +11,12 @@ const initialState={
   error:null,
   bookListCollection:null,
   bookListCollectionSpecific:{
-      business:null,
-      romance:null,
-      mystery:null,
-      fiction:null,
-      biography:null
-  },
+    business:null,
+    romance:null,
+    nonFiction:null,
+    fiction:null,
+    biography:null
+},
   bookDetail:null
 }
 export default function (state=initialState,action) {
@@ -59,6 +59,7 @@ export default function (state=initialState,action) {
             }
         }
         case actionType.BOOKLIST_COLLECTION:{
+       
             return{
                 ...state,
                 bookListCollection:action.payload
@@ -79,6 +80,7 @@ export default function (state=initialState,action) {
                 userProfile:action.payload
             }
         }
+
         case actionType.BOOKLIST_COLLECTION_SPECIFIC:{
                 
             //for genere
@@ -86,16 +88,18 @@ export default function (state=initialState,action) {
             return{
                 ...state,
                 bookListCollectionSpecific:{
-                    romance:data.slice(30,45),
-                    fiction:data.slice(50,60),
-                    action:data.slice(63,73),
-                    business:data.slice(70,85),
-                    mystery:data.slice(86,98),
-                    biography:data.slice(100,110)
+                    romance:data.slice(1,5),
+                    fiction:data.slice(5,10),
+                    action:data.slice(10,15),
+                    business:data.slice(15,20),
+                    nonFiction:data.slice(20,25),
+                    biography:data.slice(25,30)
 
                 }
             }
         }
+
+
         case actionType.BOOK_DETAIL_SINGLE:{
             return{
                 ...state,
@@ -109,6 +113,7 @@ export default function (state=initialState,action) {
         case actionType.DELETE_COLLECTION_FAIL:
         case actionType.BOOKLIST_COLLECTION_FAIL:
         case actionType.BOOK_DETAIL_SINGLE_FAIL:
+        case actionType.BOOKLIST_COLLECTION_BUSINESS_FAIL:
         case actionType.BOOKLIST_COLLECTION_SPECIFIC_FAIL:{
             return{
                 ...state,

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './authentication.css';
 
 import { connect } from 'react-redux';
-import { Redirect,withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 export class authentication extends Component {
   state = {
     user: null,

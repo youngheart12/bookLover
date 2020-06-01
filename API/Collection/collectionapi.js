@@ -1,9 +1,11 @@
 const express = require('express');
+const CombinedBook=require('../../Model/Combined/combinedbook');
 const router =  express.Router();
+const axios=require('axios');
 const User = require('../../Model/USER_PROFILE/userProfile');
 const IndCollection =require('../../Model/Collection/collection');
 const AllCollection =require( '../../Model/UserCollection/userCollection');
-const BookCollection=require('../../Model/BookCollection/bookCollection');
+
 router.post('/owner/:userId',async(req,res)=>{
     const {userId}=req.params;
 
@@ -57,13 +59,16 @@ router.patch('/owner/updateuser/:userId',async(req,res)=>{
 
 router.get('/showCollection',async(req,res)=>{
     const allCollection=await AllCollection.find();
+    
     res.status(200).send(allCollection);
 })
 
 router.get('/bookcollectionlist',async(req,res)=>{
-    const bookcollectionlist=await BookCollection.find();
+    const bookcollectionlist=await CombinedBook.find();
+  
     res.status(200).send(bookcollectionlist);
 })
+
 
 //@getindividualbookdetails
 

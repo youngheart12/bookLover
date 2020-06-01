@@ -1,6 +1,10 @@
 const express = require('express');
 const router =  express.Router();
+const mongoose=require('mongoose');
+
+const axios=require('axios');
 const BookCollection=require('../../Model/BookCollection/bookCollection');
+const CombinedBook=require('../../Model/Combined/combinedbook');
 
 
 // router.post('/bookcollection',async(req,res)=>{
@@ -37,8 +41,14 @@ const BookCollection=require('../../Model/BookCollection/bookCollection');
 
 router.get('/api/:bookId',async(req,res)=>{
     const {bookId}=req.params;
-    BookCollection.findById(bookId).then((result)=>
+    CombinedBook.findById(bookId).then((result)=>
     res.status(200).send(result)).catch((e)=>console.log(e))
     })
+
+
+
+
+ 
+ 
 
  module.exports=router;

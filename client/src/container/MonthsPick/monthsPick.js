@@ -19,8 +19,11 @@ export class monthsPick extends Component {
         let datalist;
         if(this.props.loadingState)
         {
-        datalist=this.props.bookData.splice(1,15);
+        datalist=this.props.bookData
         }
+        console.log(this.props.bookData,"months",this.props.loadingState)
+        console.log(datalist,"gots");
+        
         return (
             <div>
             <div className="desktopViewMonth">
@@ -30,9 +33,9 @@ export class monthsPick extends Component {
                    datalist.map((book,id)=>{
                        return<ImageCard 
                                 key={id}
-                                bookName={book.title}
-                                aboutBook={book.description}
-                                link={book.book_image}
+                                bookName={book.bookName}
+                                aboutBook={book.bookDescShort}
+                                link={book.isBookImage?`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=2&source=gbs_api`:book.nytImage}
                                 height="275"
                                 width="183"
                                 id={book._id}
@@ -55,9 +58,9 @@ export class monthsPick extends Component {
                    datalist.map((book,id)=>{
                        return<ImageCardMob 
                                 key={id}
-                                bookName={book.title}
-                                aboutBook={book.description}
-                                link={book.book_image}
+                                bookName={book.bookName}
+                                aboutBook={book.bookDescShort}
+                                link={book.isBookImage?`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=2&source=gbs_api`:book.nytImage}
                                
                                 id={book._id}
                        ></ImageCardMob>

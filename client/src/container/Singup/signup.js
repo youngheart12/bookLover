@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Button, Jumbotron,Row,Col, Alert} from 'reactstrap';
 import {connect} from 'react-redux';
 import Auth from '../Authentication/authentication';
-import HeadingTitle from '../../component/HeadingTitle/headingTitle';
+
 import *as actionCreator from '../../action/Auth/actionSingup';
 import './signup.css';
 

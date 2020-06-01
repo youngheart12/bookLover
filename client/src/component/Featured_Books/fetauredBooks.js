@@ -9,8 +9,9 @@ export default function fetauredBooks(props) {
     let datalist;
     if(props.loadingState)
     {
-    datalist=props.bookData.splice(1,10);
+    datalist=props.bookData;
     }
+    console.log(props.bookData,"featured")
     return (
    
     <div className="mainContainer">
@@ -27,9 +28,9 @@ export default function fetauredBooks(props) {
                 {props.loadingState?datalist.map((book,id)=>{
                     return  <FeaturedBooksComponent
                     key={id}
-                    bookName={book.title}
-                    aboutBook={book.description}
-                    link={book.book_image}
+                    bookName={book.bookName}
+                    aboutBook={book.bookDescShort}
+                    link={`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=2&source=gbs_api`}
                     width="183"
                     height="275"
                     id={book._id}

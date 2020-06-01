@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import './login.css';
 import {connect} from 'react-redux';
 import {loginUserFunction} from '../../action/Auth/actionSingup';
-import Auth from '../Authentication/authentication';
+
 import { Button, Alert } from 'reactstrap';
-import {GoogleLogin} from 'react-google-login';
+
 export class login extends Component {
     state={
         emailValidate:true,
