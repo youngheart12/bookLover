@@ -11,7 +11,8 @@ import Footer from '../Footer/footer';
 import {connect} from 'react-redux';
 import *as actionCreator from '../../action/../action/Collection/collectionAction';
 
-
+import Fade from 'react-reveal/Fade';
+import Reveal from 'react-reveal/Reveal';
 export class Homepage extends Component {
  
   state={
@@ -46,12 +47,23 @@ export class Homepage extends Component {
       
     <Authentication></Authentication>
      <AllCard></AllCard>
+     
      <FeaturedBooks loadingState={this.state.isLoading} bookData={this.state.monthsPick}></FeaturedBooks>
-     <Genre loadingState={this.state.isLoading} bookData={this.state.monthsPick}></Genre>
-     <MonthsPick loadingState={this.state.isLoading} bookData={this.state.monthsPick}></MonthsPick>
-     <Usercol></Usercol>
     
+     <Fade right duration={1200}>
+     <Genre loadingState={this.state.isLoading} bookData={this.state.monthsPick}></Genre>
+     </Fade>
+      
+     <MonthsPick loadingState={this.state.isLoading} bookData={this.state.monthsPick}></MonthsPick>
+      
+     
+       <Fade bottom duration={2000}>
+     <Usercol></Usercol>
+     
+     </Fade>
+     <Fade bottom delay={1000} duration={1000}>
       <Footer></Footer>
+      </Fade>
       
      </div>
     )

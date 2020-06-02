@@ -4,6 +4,7 @@ import FeaturedBooksComponent from './featuredBooksComponent';
 import HeadingTitle from '../HeadingTitle/headingTitle';
 import HeadingTitleMob from '../HeadingTitle/headingTitleMob';
 import Skeleton,{SkeletonTheme} from 'react-loading-skeleton';
+
 import './fetauredBooks.css';
 export default function fetauredBooks(props) {
     let datalist;
@@ -26,7 +27,8 @@ export default function fetauredBooks(props) {
                 
               
                 {props.loadingState?datalist.map((book,id)=>{
-                    return  <FeaturedBooksComponent
+                    
+                    return <FeaturedBooksComponent
                     key={id}
                     bookName={book.bookName}
                     aboutBook={book.bookDescShort}
@@ -35,6 +37,7 @@ export default function fetauredBooks(props) {
                     height="275"
                     id={book._id}
            ></FeaturedBooksComponent>
+          
            
                 }):Array(10).fill().map(()=>
                 <SkeletonTheme color="#37474F" highlightColor="#546E7A">

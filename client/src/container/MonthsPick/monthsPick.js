@@ -8,6 +8,9 @@ import HeadingTitleMob from '../../component/HeadingTitle/headingTitleMob';
 import ImageCard from '../../component/ImageCard/imageCard';
 import ImageCardMob from '../../component/ImagecardMob/imageCardMob';
 import Skeleton,{SkeletonTheme} from 'react-loading-skeleton';
+import Zoom from 'react-reveal/Zoom';
+
+
 
 export class monthsPick extends Component {
   
@@ -19,7 +22,7 @@ export class monthsPick extends Component {
         let datalist;
         if(this.props.loadingState)
         {
-        datalist=this.props.bookData
+        datalist=this.props.bookData.slice(1,35)
         }
         console.log(this.props.bookData,"months",this.props.loadingState)
         console.log(datalist,"gots");
@@ -27,7 +30,9 @@ export class monthsPick extends Component {
         return (
             <div>
             <div className="desktopViewMonth">
+                <Zoom duration={1200} delay={200}>
                <HeadingTitle title="Top Month's pick for you" margin="50px 0px"></HeadingTitle> 
+            </Zoom>
                <div className="monthsPickContainer">  
                    {this.props.loadingState?
                    datalist.map((book,id)=>{

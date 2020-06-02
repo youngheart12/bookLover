@@ -13,7 +13,8 @@ export class signup extends Component {
         email:"",
         about:"",
         errorStatus:false,
-        errorMessage:""
+        errorMessage:"",
+        isBackError:false
     }
    changeHandler=(e)=>{
     this.setState({
@@ -51,9 +52,17 @@ export class signup extends Component {
             }
            
             this.props.onSignup(userData);
+          
        }
    
    }
+ 
+  clearErrorBack=()=>{
+    this.setState({
+        isBackError:true
+    })
+  }
+ 
   clearError=()=>{
       this.setState({
           errorStatus:false,
@@ -62,7 +71,7 @@ export class signup extends Component {
   }
     render() 
     {
-       
+      
         if(this.props.authState.isAuthenticated)
         {
             this.props.history.push('/');
@@ -79,6 +88,7 @@ export class signup extends Component {
                              <form className="signupForm">
                                 <h2>Create Your Account</h2>
                                 <br></br>
+                                {this.props.authState.error&&!this.state.isBackError?<Alert color="danger" >{this.props.authState.error.error}<p className="errorMessage" onClick={this.clearErrorBack}>close</p></Alert>:null}
                                 {this.state.errorStatus?<Alert color="danger" >{this.state.errorMessage}<p className="errorMessage" onClick={this.clearError}>close</p></Alert>:null}
                                  <label>Username</label><br></br>
                                  <input type="text" name="name"placeholder="Enter Your name" onChange={this.changeHandler}required/>

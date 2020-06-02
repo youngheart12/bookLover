@@ -9,7 +9,10 @@ export class login extends Component {
     state={
         emailValidate:true,
         email:"",
-        password:""
+        password:"",
+        errorStatus:false,
+        errorMessage:"",
+        isBackError:false
     }
    
     onKeyUpHandler=(e)=>{
@@ -31,13 +34,34 @@ export class login extends Component {
         this.setState({[e.target.name]:e.target.value})
     }
     handleSubmit=(e)=>{
+       
         e.preventDefault();
+        if(!this.state.password||!this.state.email)
+        {
+            this.setState({
+                errorStatus:true,
+                errorMessage:"Fields can't be empty"
+            })
+        }else{
         const userLoginDetails={
             email:this.state.email,
             password:this.state.password
         }
         this.props.onLogin(userLoginDetails);
     }
+    }
+    clearErrorBack=()=>{
+        this.setState({
+            isBackError:true
+        })
+      }
+     
+      clearError=()=>{
+          this.setState({
+              errorStatus:false,
+              errorMessage:""
+          })
+      }
     render() { 
         if(this.props.authState.isAuthenticated)
         {
@@ -50,7 +74,8 @@ export class login extends Component {
                     <a href="/signup">Signup <span>&#8594;</span></a>
                 </nav>
                 <div className="loginModel" style={{marginTop:"0px"}}>
-                   
+                {this.props.authState.error&&!this.state.isBackError?<Alert color="danger" >{this.props.authState.error.error}<p className="errorMessage" onClick={this.clearErrorBack}>close</p></Alert>:null}
+                {this.state.errorStatus?<Alert color="danger" >{this.state.errorMessage}<p className="errorMessage" onClick={this.clearError}>close</p></Alert>:null}
                     <h1>Here you can login</h1>
                     <p style={{color:"#5D5F5C"}}>Lets's join us :)</p>
                     <form className="loginform"> 

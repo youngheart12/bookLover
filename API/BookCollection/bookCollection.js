@@ -47,7 +47,24 @@ router.get('/api/:bookId',async(req,res)=>{
 
 
 
-
+    router.get('/api/external/book',async(req,res)=>{
+        const response= await axios.get("https://api.nytimes.com/svc/books/v3/lists/Current/Trade Fiction Paperback.json?api-key=tSeNjo35fgt58QGVy0ywqC3HGqhPSWhV");
+        const result1=response.data.results.books;
+        
+        for(const element of result1)
+        {
+            const {rank,rank_last_week,primary_isbn10,title,author,amazon_product_url,description,book_image}=element;
+           
+            const response=await  axios.get(`https://www.googleapis.com/books/v1/volumes?q=isbn:${element.primary_isbn10}&fields=kind,items(id,volumeInfo(description,categories,publishedDate,pageCount,averageRating,previewLink),accessInfo)`);
+            
+            const items=response.data.items;
+               
+       
+        }
+         res.status(200).send({
+             "done":"all workd"
+         })
+         })
  
  
 

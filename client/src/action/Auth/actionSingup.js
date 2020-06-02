@@ -18,9 +18,10 @@ return function(dispatch){
             payload:res.data
         })
     }).catch((err)=>{
+
         dispatch({
             type:actionTypes.REGISTER_FAIL,
-            value:err.response.data
+            payload:err.response.data
         })
     })
     dispatch(stopLoading);

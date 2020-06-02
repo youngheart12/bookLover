@@ -3,7 +3,8 @@ import * as actionType from '../action/actionType';
 const initialState={
     isLoading:true,
     userProfileData:null,
-    isAuthenticated:false
+    isAuthenticated:false,
+    error:null
 
 }
 

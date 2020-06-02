@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import HeadTitle from '../HeadingTitle/headingTitle';
 import HeadTitleMob from '../HeadingTitle/headingTitleMob';
+
 import './genrecat.css';
 class Genercat extends Component  {
     searchHandler=(name)=>{
@@ -9,6 +10,7 @@ class Genercat extends Component  {
     render()
     {
     return (
+        
         <div>
                 <div className="desktopViewGener">
                 <HeadTitle title="Find By Gener"></HeadTitle>
@@ -69,6 +71,7 @@ class Genercat extends Component  {
            
            
         </div>
+       
     )
 }
 }
