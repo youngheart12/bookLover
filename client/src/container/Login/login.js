@@ -47,6 +47,9 @@ export class login extends Component {
             email:this.state.email,
             password:this.state.password
         }
+        this.setState({
+            isBackError:false
+        })
         this.props.onLogin(userLoginDetails);
     }
     }
@@ -103,6 +106,8 @@ export class login extends Component {
                    <div style={{marginTop:"3em"}}>
                 
                         <form className="loginModelForm">
+                        {this.props.authState.error&&!this.state.isBackError?<Alert color="danger"style={{padding:"10px"}} >{this.props.authState.error.error}<p className="errorMessage" onClick={this.clearErrorBack}>close</p></Alert>:null}
+                {this.state.errorStatus?<Alert color="danger" style={{padding:"10px"}} >{this.state.errorMessage}<p className="errorMessage" onClick={this.clearError}>close</p></Alert>:null}
                     {this.state.emailValidate?null: <Alert color="danger" style={{fontSize:"0.9em"}}>Email is invalid</Alert>}
                             <input type="email" name="email" placeholder="Username" onBlur={this.onKeyUpHandler} onChange={this.changeHandler}></input>
                             <input type="password" name="password" placeholder="Password"  onChange={this.changeHandler}></input>

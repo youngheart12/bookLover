@@ -6,6 +6,7 @@ import Skeleton,{SkeletonTheme} from 'react-loading-skeleton';
 import * as actionCreator from '../../action/Collection/collectionAction';
 import Ranking from './Ranking/ranking';
 import RecentUserCollection from './Recentusercollection/recentUserCollection';
+import ImageCardMob from '../../component/ImagecardMob/imageCardMob';
 import IconsDiv from './iconsDiv';
 import './bookdetails.css';
 export class bookdetails extends Component {
@@ -69,8 +70,11 @@ export class bookdetails extends Component {
                         <Col md="8" className="mobileViewBookDetails">
                         
                                
-                               {data? <Card style={{boxShadow:"0px 2px 10px 0px rgba(0,0,0,0.5)"}}>
-        <CardImg top width="60%" height="240px" src={`http://books.google.com/books/content?id=${data.id}&printsec=frontcover&img=1&zoom=2&source=gbs_api`} alt="Card image cap" style={{borderRadius:"5px"}}/>
+                               {data?
+                               
+                                <Card style={{boxShadow:"0px 2px 10px 0px rgba(0,0,0,0.5)"}}>
+                               <CardImg top width="60%" height="240px" src={`http://books.google.com/books/content?id=${data.id}&printsec=frontcover&img=1&zoom=2&source=gbs_api`} alt="Card image cap" style={{borderRadius:"5px"}}/>
+                  
         <CardBody style={{backgroundColor:"#424242",color:"#BDBDBD"}}>
           <CardTitle><b>{data.bookAuthor}</b></CardTitle>
           <CardSubtitle style={{fontWeight:"600"}}>by {data.bookAuthor}</CardSubtitle>

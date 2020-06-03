@@ -32,7 +32,7 @@ export default function fetauredBooks(props) {
                     key={id}
                     bookName={book.bookName}
                     aboutBook={book.bookDescShort}
-                    link={`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=2&source=gbs_api`}
+                    link={book.isBookImage?`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=2&source=gbs_api`:book.nytImage}
                     width="183"
                     height="275"
                     id={book._id}
